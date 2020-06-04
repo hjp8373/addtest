@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"> 
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />    
+    <script>
+        $(document).ready(function(){
+           $("#hd").load("header.html") ;
+            $("#ft").load("footerbase.html");
+        });
+    </script>
+    <style>
+        html{overflow-x: hidden}
+        #bg {
+            width:99vw;
+            height: 340px;
+            background: url(sub-page/LBG.png)no-repeat;
+            background-position:top;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }        
+        .side_nav{
+            position: relative;
+            top: 50px;
+            left: 5vw;
+            width: 200px;
+            
+        }
+        .side_nav h3{
+            font-size: 20px;
+            border-bottom: 3px solid ;
+            width: 200px
+        }
+      
+        .side_nav ul li {
+            padding: 8px 15px;
+        }
+        .side_nav ul li i {
+            position: absolute;
+            left: 175px;
+            top: 78px;
+        }
+        .side_nav > ul > .on {            
+            background-color: #d9e6ff;
+        }       
+        .content-box {
+            position: relative;
+            top: -145px;
+            width: 80vw;
+            max-width: 1000px;
+            height: 1750px;           
+            margin: 0 auto;
+            border: 1px solid
+        }        
+        .content-box h3{
+            font-size: 25px;
+            padding-bottom: 30px;
+        }
+        .content-box ul.tab li {
+            float:left;
+            cursor: pointer;
+            width: 68px;
+            font-size: 18px;
+        }
+        .content-box ul.tab li:first-child{
+            margin-right: 30px
+        }
+        .content-box ul.tab li.on{
+            border-bottom: 2px solid #6098FF
+        }
+        .hall {display: none}
+        .h_show {
+            width: 100%;
+            position: absolute;
+            top: 100px;
+            display: block
+        }      
+        .content-box > .h_show ul li {
+            float: left ;
+            border: 1px solid;
+            padding:10px 0;
+            width: 10%;
+            text-align: center;
+            margin: 10px 20px
+        }  
+        .content-box img {
+            display: none
+        }
+        .content-box .hall_img {
+            position: absolute;
+            top: 220px;
+            width: 80%;
+            left: 80px;
+            display: block
+        }
+        .content-box .h_show ul li.tg {
+            color: #6098FF
+        }
+        .content-box .text_box ul{
+            display: none;
+        }
+        .content-box ul.text-b {
+            position: absolute;
+            bottom: 620px;
+            width: 60vw;
+            border: 2px solid #6689d2;
+            left: 2.5vw;
+            padding: 10px;
+            max-width: 920px;
+            display: block
+        }
+        .content-box ul.text-b li {
+            line-height: 2.3;            
+        }
+        .content-box ul.text-b li img {
+            display: inline-block;
+            vertical-align: super
+        }
+        .content-box table {
+            display: none;
+        }        
+        .content-box table.t_show{
+            display: block;
+            position: absolute;
+            bottom: 130px;
+            left: 2.5vw;    
+            line-height: 1.5;
+            border-collapse: collapse;
+        }
+        .content-box table.t_show tbody{
+            width: 100%;
+        }
+
+        .content-box table.t_show th {
+            padding:10px 0;
+            color: #6689d2;
+            border-top: 2px solid #84B1ED;
+            border-bottom: 2px solid #84B1ED;
+            
+        }
+        .content-box table.t_show tr {
+            width: 100%;
+        }
+        .content-box table.t_show tr th:nth-child(1){width: 150px}
+            .content-box table.t_show tr th:nth-child(2){width: 800px}
+        .content-box table.t_show tr td{
+            padding: 10px;
+            border-bottom: 1px solid #ccc
+        }
+        .content-box table.t_show tr td:first-child{
+            background: #e1eef6;
+            color: #353848;
+            text-align: center;
+        }
+        .content-box table.t_show button{
+            border: 1px solid ;
+            background-color: #fff;
+            padding: 2px 5px;
+            cursor: pointer;  
+            margin-left: 10px;
+        }
+        .content-box table.t_show button:hover {
+            color: #84B1ED
+        }
+        .content-box .rent_b {
+            position: absolute;
+            bottom: 10px;
+            left: 45%;
+            border: 1px solid ;
+            background: #fff;
+            font-size: 17px;
+            padding: 10px;  
+            cursor: pointer
+        }
+        .content-box .rent_b:hover {
+            color: #84B1ED
+        }
+        @media all and (min-width:1401px){
+            .content-box {  margin-left: 23vw;  }            
+        }
+        @media all and (min-width:1105px) and (max-width:1400px){
+            .content-box { margin-left: 25vw; width: 70vw}
+            .content-box .h_show ul li {width: 12%;margin: 8.5px;}
+            .content-box ul.text-b {bottom: 70vh;left: 9%; width: 80%;}
+            .content-box table.t_show {width: 90%;left: 5%}
+            .content-box table.t_show tr th:nth-child(1){width:18%}
+            .content-box table.t_show tr th:nth-child(2){width: 82% !important}
+        }
+        @media all and (min-width:960px) and (max-width:1104px){
+            .content-box {margin-left: 27vw; width: 70vw;}
+            .content-box .h_show ul li {width: 15%;margin: 10px;}
+            .content-box .hall_img {top: 280px}
+            .content-box ul.text-b {bottom: 70vh;left: 9%; width: 80%;}
+            .content-box table.t_show {width: 90%;left: 5%}
+            .content-box table.t_show tr th:nth-child(1){width:18%}
+            .content-box table.t_show tr th:nth-child(2){width: 82% !important}
+        }
+        @media all and (min-width:780px) and (max-width:959px){
+            .side_nav {left: 41vw; top: 50px}
+            .side_nav h3 {font-size: 23px; padding-bottom: 10px; border: none}
+            .side_nav h3:after {content: "";display: block; border-bottom: 2px solid ;
+                 margin-left: -50px; width: 200px;padding-top: 5px;
+            }
+            .side_nav ul {width: 550px;margin-left: -195px}
+            .side_nav ul li {width: 20%; float: left; text-align: center;margin-left: 10px; border: 1px solid #d9e6ff; border-radius: 5px}
+            .side_nav i {display: none}
+            .side_nav .on{font-weight: bold;}
+            .side_nav > ul > .on:after {
+            content: "";
+            width: 0;
+            height: 0;
+            display: block;
+            border-top: 15px solid #d9e6ff;
+            border-right: 15px solid transparent;
+            border-left: 15px solid transparent;
+            position: absolute;
+            left: -26px;
+            top: 85px
+            }
+            .side_nav > ul > li > a {
+                display: block;
+                -webkit-transition: all 0.1s linear;
+                transition: all 0.1s linear;
+            }
+            .side_nav > ul > li:hover > a {
+             -webkit-transform: scale(1.1);
+                -moz-transform: scale(1.1);
+                 -ms-transform: scale(1.1);
+                  -o-transform: scale(1.1);
+                     transform: scale(1.1);  
+            }
+            .content-box {top: 130px; height: 1650px; width: 70vw;}
+            .content-box h3 {display: block; text-align: center; font-size: 22px; width: 100%; text-indent: -200px}
+            .tab {margin-left: 10px}
+            .content-box .h_show ul li {width: 15%;margin: 10px; border: none}
+            .content-box .hall_img {top: 250px;width: 90%; left: 20px;}
+            .content-box ul.text-b {bottom: 65vh;left: 9%; width: 80%;padding: 15px;}
+            .content-box table.t_show {width: 90%;left: 5%;bottom: 15vh;}
+            .content-box table.t_show tr th:nth-child(1){width:18%}
+            .content-box table.t_show tr th:nth-child(2){width: 82% !important}
+            .content-box .rent_b{left: 38%;}
+            #footer {top: 150px}
+        }
+        @media all and (min-width:610px) and (max-width:779px){
+            .side_nav {left: 41vw; top: 50px}
+            .side_nav h3 {font-size: 23px; padding-bottom: 10px; border: none}
+            .side_nav h3:after {content: "";display: block; border-bottom: 2px solid ;
+                 margin-left: -50px; width: 200px;padding-top: 5px;
+            }
+            .side_nav ul {width: 550px;margin-left: -195px}
+            .side_nav ul li {width: 20%; float: left; text-align: center;margin-left: 10px; border: 1px solid #d9e6ff; border-radius: 5px}
+            .side_nav i {display: none}
+            .side_nav .on{font-weight: bold;}
+            .side_nav > ul > .on:after {
+            content: "";
+            width: 0;
+            height: 0;
+            display: block;
+            border-top: 15px solid #d9e6ff;
+            border-right: 15px solid transparent;
+            border-left: 15px solid transparent;
+            position: absolute;
+            left: -27px;
+            top: 85px
+            }
+            .side_nav > ul > li > a {
+                display: block;
+                -webkit-transition: all 0.1s linear;
+                transition: all 0.1s linear;
+            }
+            .side_nav > ul > li:hover > a {
+             -webkit-transform: scale(1.1);
+                -moz-transform: scale(1.1);
+                 -ms-transform: scale(1.1);
+                  -o-transform: scale(1.1);
+                     transform: scale(1.1);  
+            }
+            .content-box {top: 130px; height: 1600px; width: 70vw;}
+            .content-box h3 {display: block; text-align: center; font-size: 22px; width: 100%; text-indent: -200px}
+            .tab {margin-left: 10px}
+            .content-box .h_show ul li {width: 18%;margin: 10px; border: none}
+            .content-box .h_show ul li:last-child{width: 20%}
+            .content-box .h_show ul li {width: 15%;margin: 10px; border: none}
+            .content-box .hall_img {top: 250px;width: 100%; left: 0px;}
+            .content-box ul.text-b {bottom: 65vh;left: 4.5%; width: 90%;padding: 15px; height: 250px;overflow-y: scroll}
+            .content-box ul.text-b::-webkit-scrollbar{width: 15px; background-color: antiquewhite}
+            .content-box ul.text-b::-webkit-scrollbar-thumb{background-color: #84B1ED; background-clip: padding-box; border: 3px solid transparent }
+            .content-box ul.text-b::-webkit-scrollbar-track{background-color: #dceafc}
+            .content-box table.t_show {width: 90%;left: 5%;bottom: 15vh;}
+            .content-box table.t_show tr th:nth-child(1){width:18%}
+            .content-box table.t_show tr th:nth-child(2){width: 82% !important}
+            .content-box .rent_b{left: 34%;}
+            #footer {top: 150px}
+        }
+        @media all and (min-width:500px) and (max-width:609px){
+            .side_nav {left: 39vw; top: 50px}
+            .side_nav h3 {font-size: 23px; padding-bottom: 10px; border: none}
+            .side_nav h3:after {content: "";display: block; border-bottom: 2px solid ;
+                 margin-left: -50px; width: 200px;padding-top: 5px;
+            }
+            .side_nav ul {width: 550px;margin-left: -195px}
+            .side_nav ul li {width: 20%; float: left; text-align: center;margin-left: 10px; border: 1px solid #d9e6ff; border-radius: 5px}
+            .side_nav i {display: none}
+            .side_nav .on{font-weight: bold;}
+            .side_nav > ul > .on:after {
+            content: "";
+            width: 0;
+            height: 0;
+            display: block;
+            border-top: 15px solid #d9e6ff;
+            border-right: 15px solid transparent;
+            border-left: 15px solid transparent;
+            position: absolute;
+            left: -27px;
+            top: 85px
+            }
+            .side_nav > ul > li > a {
+                display: block;
+                -webkit-transition: all 0.1s linear;
+                transition: all 0.1s linear;
+            }
+            .side_nav > ul > li:hover > a {
+             -webkit-transform: scale(1.1);
+                -moz-transform: scale(1.1);
+                 -ms-transform: scale(1.1);
+                  -o-transform: scale(1.1);
+                     transform: scale(1.1);  
+            }
+            .content-box {top: 130px; height: 1500px; width: 80vw;}
+            .content-box h3 {display: block; text-align: center; font-size: 20px; width: 100%; text-indent: -240px}
+            .tab {margin-left: 10px}
+            .content-box .h_show ul li {width: 22%;margin: 5px; border: none}   
+            .content-box .hall_img {top: 250px;width: 100%; left: 0px;}
+            .content-box ul.text-b {bottom: 68vh;left: 4.5%; width: 90%;padding: 15px; height: 250px;overflow-y: scroll}
+            .content-box ul.text-b::-webkit-scrollbar{width: 15px; background-color: antiquewhite}
+            .content-box ul.text-b::-webkit-scrollbar-thumb{background-color: #84B1ED; background-clip: padding-box; border: 3px solid transparent }
+            .content-box ul.text-b::-webkit-scrollbar-track{background-color: #dceafc}
+            .content-box table.t_show {width: 90%;left: 5%;bottom: 8vh;}
+            .content-box table.t_show tr th:nth-child(1){width:24%}
+            .content-box table.t_show tr th:nth-child(2){width: 76% !important}
+            .content-box table.t_show button {margin: 5px}
+            .content-box .rent_b{left: 33%;font-size: 16px}
+            #footer {top: 150px}
+        }
+        @media all and (max-width:499px){
+            .side_nav {left: 37vw; top: 50px}
+            .side_nav h3 {font-size: 23px; padding-bottom: 10px; border: none}
+            .side_nav h3:after {content: "";display: block; border-bottom: 2px solid ;
+                 margin-left: -50px; width: 200px;padding-top: 5px;
+            }
+            .side_nav ul {width: 370px;margin-left: -136px;}
+            .side_nav ul li {width: 23%; float: left; text-align: center;margin-left: 5px; border: 1px solid #d9e6ff; border-radius: 5px;font-size: 14px;padding: 10px 10px}         
+            .side_nav i {display: none}
+            .side_nav .on{font-weight: bold;}
+            .side_nav > ul > .on:after {
+            content: "";
+            width: 0;
+            height: 0;
+            display: block;
+            border-top: 15px solid #d9e6ff;
+            border-right: 15px solid transparent;
+            border-left: 15px solid transparent;
+            position: absolute;
+            left: -14px;
+            top: 85px
+            }
+            .side_nav > ul > li > a {
+                display: block;
+                -webkit-transition: all 0.1s linear;
+                transition: all 0.1s linear;
+            }
+            .side_nav > ul > li:hover > a {
+             -webkit-transform: scale(1.1);
+                -moz-transform: scale(1.1);
+                 -ms-transform: scale(1.1);
+                  -o-transform: scale(1.1);
+                     transform: scale(1.1);  
+            }
+            .content-box {top: 130px; height: 1350px; width: 80vw;}
+            .content-box h3 {display: block; text-align: center; font-size: 20px; width: 100%; text-indent: -200px}
+            .tab {margin-left: 10px; }
+            .content-box ul.tab li {font-size: 16px}
+            .content-box .h_show ul li {width: 24%; padding:5px 3px;margin:5px 1px; border: none}
+            .content-box .h_show ul li:last-child{width: 30%;}
+            .content-box .hall_img {top: 250px;width: 100%; left: 0px;}
+            .content-box ul.text-b {bottom: 88vh;left: 4.5%; width: 90%;padding: 5px; height: 250px;overflow-y: scroll}
+            .content-box ul.text-b::-webkit-scrollbar{width: 15px; background-color: antiquewhite}
+            .content-box ul.text-b::-webkit-scrollbar-thumb{background-color: #84B1ED; background-clip: padding-box; border: 3px solid transparent }
+            .content-box ul.text-b::-webkit-scrollbar-track{background-color: #dceafc}
+            .content-box ul.text-b li {line-height: 2; font-size: 15px}
+            .content-box table.t_show {width: 90%;left: 5%;bottom: 10vh; font-size: 14px}
+            .content-box table.t_show tr th:nth-child(1){width:24%}
+            .content-box table.t_show tr th:nth-child(2){width: 76% !important}
+            .content-box table.t_show button {margin: 5px}
+            .content-box .rent_b{left: 27%;font-size: 16px;padding: 5px;}
+            #footer {top: 150px}
+        }
+    </style>
+</head>
+<body>
+    <div id="hd"></div>
+    <div id="bg"></div>
+    <div class="side_nav">
+        <h3>시설안내</h3>        
+        <ul>
+            <li><a href="sub_page3-1.html"><i class="fas fa-chevron-right"></i>시설개요</a></li>
+            <li class="on"><a href="sup-page2-1.html">전시장</a></li>
+            <li><a href="sup-page3-3.html">회의실</a></li>
+            <li><a href="sup-page3-4.html">편의시설</a></li>
+        </ul>
+    </div>
+    <div class="content-box">
+        <h3>전시장</h3>
+        <ul class="tab">
+            <li class="on">1전시장</li>
+            <li>2전시장</li>
+        </ul>
+<!--    1전시장 탭-->
+        <div class="hall h_show">
+             <ul>
+                 <li class="tg"><a href="javascript:;;">전체개요</a></li>
+                 <li><a href="javascript:;;">전시 1홀</a></li>
+                 <li><a href="javascript:;;">전시 2홀</a></li>
+                 <li><a href="javascript:;;">전시 3홀</a></li>
+                 <li><a href="javascript:;;">전시 4홀</a></li>
+                 <li><a href="javascript:;;">전시 5홀</a></li>
+                 <li><a href="javascript:;;">옥외전시장</a></li>
+            </ul>           
+        </div>
+        <div class="img-box">
+           <ul>
+               <li><img class="hall_img" src="hall1.gif" alt=""></li>
+               <li><img src="sub-page/col1.png" alt=""></li>
+               <li><img src="sub-page/col2.gif" alt=""></li>
+               <li><img src="sub-page/col3.gif" alt=""></li>
+               <li><img src="sub-page/col4.gif" alt=""></li>
+               <li><img src="sub-page/col5.gif" alt=""></li>
+               <li><img src="sub-page/col6.gif" alt=""></li>
+           </ul>            
+        </div>
+<!--        1전시장 홀 사진-->
+<!--       2전시장 탭-->
+        <div class="hall">
+            <ul>
+                 <li><a href="col2-1.html">전체개요</a></li>
+                 <li><a href="col2-2.html">전시 6홀</a></li>
+                 <li><a href="col2-3.html">전시 7홀</a></li>
+                 <li><a href="col2-4.html">전시 8홀</a></li>
+                 <li><a href="col2-5.html">전시 9홀</a></li>
+                 <li><a href="col2-6.html">전시 10홀</a></li>                 
+            </ul>   
+        </div>
+<!--        2전시장 탭 이미지-->
+        <div class="img-box2">
+            <ul>
+                <li><img src="sub-page/col2-1.gif" alt=""></li>
+                <li><img src="sub-page/col2-2.gif" alt=""></li>
+                <li><img src="sub-page/col2-3.gif" alt=""></li>
+                <li><img src="sub-page/col2-4.gif" alt=""></li>
+                <li><img src="sub-page/col2-5.gif" alt=""></li>
+                <li><img src="sub-page/col2-6.gif" alt=""></li>
+            </ul>
+        </div>
+<!--        텍스트 박스           -->
+        <div class="text_box">
+            <ul class="text-b">
+                <li><img src="sub-page/li1.png" alt="">
+                    실내전시면적 53,541㎡, 옥외 전시면적 2,849㎡
+                </li>
+                <li><img src="sub-page/li1.png" alt="">
+                    단층무주구조 : 천장높이 15m 복층 부스 설치가능
+                </li>
+                <li><img src="sub-page/li1.png" alt="">
+                    중장비 전시 : 수중하중 5ton/㎡로 중장비 전시가능 
+                </li>
+                <li><img src="sub-page/li1.png" alt="">
+                    분할/통합 : 총 5개홀, 이동식 칸막이로 각홀 2분할 및 통합 사용 가능
+                </li>
+                <li><img src="sub-page/li1.png" alt="">
+                    대형주차장(지상) : 전용주차장 2,000대 수용가능
+                </li>
+                <li><img src="sub-page/li1.png" alt="">
+                    전문하역시설 : 일반차량 동선과 분리된 전용도로, 대형화물출입구, 홀 내부 차량 진입
+                </li>
+            </ul>
+            <ul class="">
+                <li><img src="sub-page/li1.png" alt="">
+                    실내전시면적 53,541㎡
+                </li>
+                <li><img src="sub-page/li1.png" alt="">
+                   4개의 전시홀 : 가로세로비율1.4:1, 각 2분할 가능
+                </li>
+                <li><img src="sub-page/li1.png" alt="">
+                    1개의 이벤트홀 : 이동식 무대배치, 6분할 가능, 컨벤션, 이벤트 등 다목적 사용가능 
+                </li>
+                <li><img src="sub-page/li1.png" alt="">
+                    참관객 동선 : 2층로비(전시홀 조망) → 1층 전시장으로 진입
+                </li>
+                <li><img src="sub-page/li1.png" alt="">
+                    전문하역시설 : 일반차량 동선과 분리된 전용도로, 대형화물출입구, 홀 내부 차량 진입
+                </li>
+                <li><img src="sub-page/li1.png" alt="">
+                    대형주차장(지상/지하) : 전용주차장 2,200대 수용가능
+                </li>
+                <li><img src="sub-page/li1.png" alt="">
+                    지상주차장 : 지상주차장 386대(버스17대)
+                </li>
+            </ul>
+        </div>            
+        <div class="table_list">
+            <table width="900" class="t_show">
+            <tr>
+                <th>구분</th>
+                <th>내용</th>
+            </tr>
+            <tr>
+                <td>규모</td>
+                <td>10,611㎡</td>
+            </tr>
+            <tr>
+               <td>수용능력</td>
+                <td>
+                   <ul>
+                    <li>전시부스600부스 (3X3부스 기준, 통로포함)</li>
+                    <li>A·B 2분할 사용가능</li>
+                    </ul>
+                </td>
+            </tr>
+             <tr>
+                 <td>주요시설</td>
+                 <td>
+                     <ul>
+                         <li> Trench: 전기, 급배수, 압축공기, 전화, 인터넷</li>
+                         <li>바닥마감재:하드너</li>
+                         <li>바닥하중: 5ton/㎡</li>
+                     </ul>
+                </td>                     
+             </tr>
+             <tr>
+                 <td>주최자이용시설</td>
+                 <td>
+                     <ul>
+                         <li>주최자 사무실 (1층,로비방향) : 66㎡</li>
+                         <li>주최자 사무실 (2층) : 23㎡</li>
+                         <li>전시지원사무실 A: 40㎡ </li>
+                         <li>전시지원사무실 B: 40㎡</li>
+                     </ul>
+                 </td>                     
+             </tr>
+             <tr>
+                 <td>도면</td>
+                 <td><button>JPG 파일 다운로드</button>
+                     <button> CAF 파일 다운로드</button> 
+                 </td>
+             </tr>
+            </table>
+            <!--제 2전시장 -->
+             <table width="900px">
+            <tr>
+                <th>구분</th>
+                <th>내용</th>
+            </tr>
+            <tr>
+                <td>규모</td>
+                <td>5,580㎡</td>
+            </tr>
+            <tr>
+               <td>수용능력</td>
+                <td>
+                    <ul>
+                        <li>전시부스 200부스 (3X3 부스 기준 , 통로포함)</li>
+                        <li>A,B,C 각 2분할 가능, 전체 6분할 가능</li>
+                        <li>6분할 - 강의식:400 극장식:800 연회식:450 리셉션 :1,000</li>
+                        <li>3분할 - 강의식:800 극장식:1,600 연회식:900 리셉션식:2,000</li>
+                        <li>전체 - 강의식:2,400 극장식:5,400 연회식:2,700 리셉션식:6,000</li>
+                    </ul>
+                </td>
+            </tr>
+             <tr>
+                 <td>주요시설</td>
+                 <td>
+                     <ul>
+                         <li> Trench: 전기, 급배수, 압축공기, 전화, 인터넷</li>
+                         <li>바닥마감재:카펫</li>
+                         <li>바닥하중: 2ton/㎡</li>
+                     </ul>
+                </td>                     
+             </tr>
+             <tr>
+                 <td>주최자이용시설</td>
+                 <td>
+                     <ul>
+                         <li>1층 : 주최자사무실 3개소, VIP대기실 1개소, 강사대기실 2개소, 대기실 1개소,분장실 1개소, 사무실 4개소</li>
+                         <li>2층 : 음향조정실 3개소, 통역실 3개소(각 8개국어)</li>  
+                     </ul>
+                 </td>                     
+             </tr>
+             <tr>
+                 <td>도면</td>
+                 <td><button>JPG 파일 다운로드</button><button> CAF 파일 다운로드</button> </td>
+             </tr>
+        </table>                   
+        </div> 
+    <button class="rent_b">임대상담 문의하기</button> 
+   </div>
+    <div id="ft"></div>
+</body>
+</html>
