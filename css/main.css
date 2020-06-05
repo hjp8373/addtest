@@ -2,7 +2,7 @@
 <style>       
         @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
         body {font-family: 'NanumSquare';}
-html{ width: 99vw; overflow: hidden}
+html{ width: 99vw; overflow-x: hidden}
         #visual, #content1, #content2, #content3{
             width: 100vw;
             height: 100vh;
