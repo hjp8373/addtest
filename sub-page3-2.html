@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"> 
     <script src="js/jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/sub3-2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />    
     <script>
         $(document).ready(function(){
@@ -13,394 +14,46 @@
             $("#ft").load("footerbase.html");
         });
     </script>
-    <style>
-        html{overflow-x: hidden}
-        #bg {
-            width:99vw;
-            height: 340px;
-            background: url(sub-page/LBG.png)no-repeat;
-            background-position:top;
-            background-size: cover;
-            margin: 0;
-            padding: 0;
-        }        
-        .side_nav{
-            position: relative;
-            top: 50px;
-            left: 5vw;
-            width: 200px;
-            
-        }
-        .side_nav h3{
-            font-size: 20px;
-            border-bottom: 3px solid ;
-            width: 200px
-        }
-      
-        .side_nav ul li {
-            padding: 8px 15px;
-        }
-        .side_nav ul li i {
-            position: absolute;
-            left: 175px;
-            top: 78px;
-        }
-        .side_nav > ul > .on {            
-            background-color: #d9e6ff;
-        }       
-        .content-box {
-            position: relative;
-            top: -145px;
-            width: 80vw;
-            max-width: 1000px;
-            height: 1750px;           
-            margin: 0 auto;
-            border: 1px solid
-        }        
-        .content-box h3{
-            font-size: 25px;
-            padding-bottom: 30px;
-        }
-        .content-box ul.tab li {
-            float:left;
-            cursor: pointer;
-            width: 68px;
-            font-size: 18px;
-        }
-        .content-box ul.tab li:first-child{
-            margin-right: 30px
-        }
-        .content-box ul.tab li.on{
-            border-bottom: 2px solid #6098FF
-        }
-        .hall {display: none}
-        .h_show {
-            width: 100%;
-            position: absolute;
-            top: 100px;
-            display: block
-        }      
-        .content-box > .h_show ul li {
-            float: left ;
-            border: 1px solid;
-            padding:10px 0;
-            width: 10%;
-            text-align: center;
-            margin: 10px 20px
-        }  
-        .content-box img {
-            display: none
-        }
-        .content-box .hall_img {
-            position: absolute;
-            top: 220px;
-            width: 80%;
-            left: 80px;
-            display: block
-        }
-        .content-box .h_show ul li.tg {
-            color: #6098FF
-        }
-        .content-box .text_box ul{
-            display: none;
-        }
-        .content-box ul.text-b {
-            position: absolute;
-            bottom: 620px;
-            width: 60vw;
-            border: 2px solid #6689d2;
-            left: 2.5vw;
-            padding: 10px;
-            max-width: 920px;
-            display: block
-        }
-        .content-box ul.text-b li {
-            line-height: 2.3;            
-        }
-        .content-box ul.text-b li img {
-            display: inline-block;
-            vertical-align: super
-        }
-        .content-box table {
-            display: none;
-        }        
-        .content-box table.t_show{
-            display: block;
-            position: absolute;
-            bottom: 130px;
-            left: 2.5vw;    
-            line-height: 1.5;
-            border-collapse: collapse;
-        }
-        .content-box table.t_show tbody{
-            width: 100%;
-        }
-
-        .content-box table.t_show th {
-            padding:10px 0;
-            color: #6689d2;
-            border-top: 2px solid #84B1ED;
-            border-bottom: 2px solid #84B1ED;
-            
-        }
-        .content-box table.t_show tr {
-            width: 100%;
-        }
-        .content-box table.t_show tr th:nth-child(1){width: 150px}
-            .content-box table.t_show tr th:nth-child(2){width: 800px}
-        .content-box table.t_show tr td{
-            padding: 10px;
-            border-bottom: 1px solid #ccc
-        }
-        .content-box table.t_show tr td:first-child{
-            background: #e1eef6;
-            color: #353848;
-            text-align: center;
-        }
-        .content-box table.t_show button{
-            border: 1px solid ;
-            background-color: #fff;
-            padding: 2px 5px;
-            cursor: pointer;  
-            margin-left: 10px;
-        }
-        .content-box table.t_show button:hover {
-            color: #84B1ED
-        }
-        .content-box .rent_b {
-            position: absolute;
-            bottom: 10px;
-            left: 45%;
-            border: 1px solid ;
-            background: #fff;
-            font-size: 17px;
-            padding: 10px;  
-            cursor: pointer
-        }
-        .content-box .rent_b:hover {
-            color: #84B1ED
-        }
-        @media all and (min-width:1401px){
-            .content-box {  margin-left: 23vw;  }            
-        }
-        @media all and (min-width:1105px) and (max-width:1400px){
-            .content-box { margin-left: 25vw; width: 70vw}
-            .content-box .h_show ul li {width: 12%;margin: 8.5px;}
-            .content-box ul.text-b {bottom: 70vh;left: 9%; width: 80%;}
-            .content-box table.t_show {width: 90%;left: 5%}
-            .content-box table.t_show tr th:nth-child(1){width:18%}
-            .content-box table.t_show tr th:nth-child(2){width: 82% !important}
-        }
-        @media all and (min-width:960px) and (max-width:1104px){
-            .content-box {margin-left: 27vw; width: 70vw;}
-            .content-box .h_show ul li {width: 15%;margin: 10px;}
-            .content-box .hall_img {top: 280px}
-            .content-box ul.text-b {bottom: 70vh;left: 9%; width: 80%;}
-            .content-box table.t_show {width: 90%;left: 5%}
-            .content-box table.t_show tr th:nth-child(1){width:18%}
-            .content-box table.t_show tr th:nth-child(2){width: 82% !important}
-        }
-        @media all and (min-width:780px) and (max-width:959px){
-            .side_nav {left: 41vw; top: 50px}
-            .side_nav h3 {font-size: 23px; padding-bottom: 10px; border: none}
-            .side_nav h3:after {content: "";display: block; border-bottom: 2px solid ;
-                 margin-left: -50px; width: 200px;padding-top: 5px;
-            }
-            .side_nav ul {width: 550px;margin-left: -195px}
-            .side_nav ul li {width: 20%; float: left; text-align: center;margin-left: 10px; border: 1px solid #d9e6ff; border-radius: 5px}
-            .side_nav i {display: none}
-            .side_nav .on{font-weight: bold;}
-            .side_nav > ul > .on:after {
-            content: "";
-            width: 0;
-            height: 0;
-            display: block;
-            border-top: 15px solid #d9e6ff;
-            border-right: 15px solid transparent;
-            border-left: 15px solid transparent;
-            position: absolute;
-            left: -26px;
-            top: 85px
-            }
-            .side_nav > ul > li > a {
-                display: block;
-                -webkit-transition: all 0.1s linear;
-                transition: all 0.1s linear;
-            }
-            .side_nav > ul > li:hover > a {
-             -webkit-transform: scale(1.1);
-                -moz-transform: scale(1.1);
-                 -ms-transform: scale(1.1);
-                  -o-transform: scale(1.1);
-                     transform: scale(1.1);  
-            }
-            .content-box {top: 130px; height: 1650px; width: 70vw;}
-            .content-box h3 {display: block; text-align: center; font-size: 22px; width: 100%; text-indent: -200px}
-            .tab {margin-left: 10px}
-            .content-box .h_show ul li {width: 15%;margin: 10px; border: none}
-            .content-box .hall_img {top: 250px;width: 90%; left: 20px;}
-            .content-box ul.text-b {bottom: 65vh;left: 9%; width: 80%;padding: 15px;}
-            .content-box table.t_show {width: 90%;left: 5%;bottom: 15vh;}
-            .content-box table.t_show tr th:nth-child(1){width:18%}
-            .content-box table.t_show tr th:nth-child(2){width: 82% !important}
-            .content-box .rent_b{left: 38%;}
-            #footer {top: 150px}
-        }
-        @media all and (min-width:610px) and (max-width:779px){
-            .side_nav {left: 41vw; top: 50px}
-            .side_nav h3 {font-size: 23px; padding-bottom: 10px; border: none}
-            .side_nav h3:after {content: "";display: block; border-bottom: 2px solid ;
-                 margin-left: -50px; width: 200px;padding-top: 5px;
-            }
-            .side_nav ul {width: 550px;margin-left: -195px}
-            .side_nav ul li {width: 20%; float: left; text-align: center;margin-left: 10px; border: 1px solid #d9e6ff; border-radius: 5px}
-            .side_nav i {display: none}
-            .side_nav .on{font-weight: bold;}
-            .side_nav > ul > .on:after {
-            content: "";
-            width: 0;
-            height: 0;
-            display: block;
-            border-top: 15px solid #d9e6ff;
-            border-right: 15px solid transparent;
-            border-left: 15px solid transparent;
-            position: absolute;
-            left: -27px;
-            top: 85px
-            }
-            .side_nav > ul > li > a {
-                display: block;
-                -webkit-transition: all 0.1s linear;
-                transition: all 0.1s linear;
-            }
-            .side_nav > ul > li:hover > a {
-             -webkit-transform: scale(1.1);
-                -moz-transform: scale(1.1);
-                 -ms-transform: scale(1.1);
-                  -o-transform: scale(1.1);
-                     transform: scale(1.1);  
-            }
-            .content-box {top: 130px; height: 1600px; width: 70vw;}
-            .content-box h3 {display: block; text-align: center; font-size: 22px; width: 100%; text-indent: -200px}
-            .tab {margin-left: 10px}
-            .content-box .h_show ul li {width: 18%;margin: 10px; border: none}
-            .content-box .h_show ul li:last-child{width: 20%}
-            .content-box .h_show ul li {width: 15%;margin: 10px; border: none}
-            .content-box .hall_img {top: 250px;width: 100%; left: 0px;}
-            .content-box ul.text-b {bottom: 65vh;left: 4.5%; width: 90%;padding: 15px; height: 250px;overflow-y: scroll}
-            .content-box ul.text-b::-webkit-scrollbar{width: 15px; background-color: antiquewhite}
-            .content-box ul.text-b::-webkit-scrollbar-thumb{background-color: #84B1ED; background-clip: padding-box; border: 3px solid transparent }
-            .content-box ul.text-b::-webkit-scrollbar-track{background-color: #dceafc}
-            .content-box table.t_show {width: 90%;left: 5%;bottom: 15vh;}
-            .content-box table.t_show tr th:nth-child(1){width:18%}
-            .content-box table.t_show tr th:nth-child(2){width: 82% !important}
-            .content-box .rent_b{left: 34%;}
-            #footer {top: 150px}
-        }
-        @media all and (min-width:500px) and (max-width:609px){
-            .side_nav {left: 39vw; top: 50px}
-            .side_nav h3 {font-size: 23px; padding-bottom: 10px; border: none}
-            .side_nav h3:after {content: "";display: block; border-bottom: 2px solid ;
-                 margin-left: -50px; width: 200px;padding-top: 5px;
-            }
-            .side_nav ul {width: 550px;margin-left: -195px}
-            .side_nav ul li {width: 20%; float: left; text-align: center;margin-left: 10px; border: 1px solid #d9e6ff; border-radius: 5px}
-            .side_nav i {display: none}
-            .side_nav .on{font-weight: bold;}
-            .side_nav > ul > .on:after {
-            content: "";
-            width: 0;
-            height: 0;
-            display: block;
-            border-top: 15px solid #d9e6ff;
-            border-right: 15px solid transparent;
-            border-left: 15px solid transparent;
-            position: absolute;
-            left: -27px;
-            top: 85px
-            }
-            .side_nav > ul > li > a {
-                display: block;
-                -webkit-transition: all 0.1s linear;
-                transition: all 0.1s linear;
-            }
-            .side_nav > ul > li:hover > a {
-             -webkit-transform: scale(1.1);
-                -moz-transform: scale(1.1);
-                 -ms-transform: scale(1.1);
-                  -o-transform: scale(1.1);
-                     transform: scale(1.1);  
-            }
-            .content-box {top: 130px; height: 1500px; width: 80vw;}
-            .content-box h3 {display: block; text-align: center; font-size: 20px; width: 100%; text-indent: -240px}
-            .tab {margin-left: 10px}
-            .content-box .h_show ul li {width: 22%;margin: 5px; border: none}   
-            .content-box .hall_img {top: 250px;width: 100%; left: 0px;}
-            .content-box ul.text-b {bottom: 68vh;left: 4.5%; width: 90%;padding: 15px; height: 250px;overflow-y: scroll}
-            .content-box ul.text-b::-webkit-scrollbar{width: 15px; background-color: antiquewhite}
-            .content-box ul.text-b::-webkit-scrollbar-thumb{background-color: #84B1ED; background-clip: padding-box; border: 3px solid transparent }
-            .content-box ul.text-b::-webkit-scrollbar-track{background-color: #dceafc}
-            .content-box table.t_show {width: 90%;left: 5%;bottom: 8vh;}
-            .content-box table.t_show tr th:nth-child(1){width:24%}
-            .content-box table.t_show tr th:nth-child(2){width: 76% !important}
-            .content-box table.t_show button {margin: 5px}
-            .content-box .rent_b{left: 33%;font-size: 16px}
-            #footer {top: 150px}
-        }
-        @media all and (max-width:499px){
-            .side_nav {left: 37vw; top: 50px}
-            .side_nav h3 {font-size: 23px; padding-bottom: 10px; border: none}
-            .side_nav h3:after {content: "";display: block; border-bottom: 2px solid ;
-                 margin-left: -50px; width: 200px;padding-top: 5px;
-            }
-            .side_nav ul {width: 370px;margin-left: -136px;}
-            .side_nav ul li {width: 23%; float: left; text-align: center;margin-left: 5px; border: 1px solid #d9e6ff; border-radius: 5px;font-size: 14px;padding: 10px 10px}         
-            .side_nav i {display: none}
-            .side_nav .on{font-weight: bold;}
-            .side_nav > ul > .on:after {
-            content: "";
-            width: 0;
-            height: 0;
-            display: block;
-            border-top: 15px solid #d9e6ff;
-            border-right: 15px solid transparent;
-            border-left: 15px solid transparent;
-            position: absolute;
-            left: -14px;
-            top: 85px
-            }
-            .side_nav > ul > li > a {
-                display: block;
-                -webkit-transition: all 0.1s linear;
-                transition: all 0.1s linear;
-            }
-            .side_nav > ul > li:hover > a {
-             -webkit-transform: scale(1.1);
-                -moz-transform: scale(1.1);
-                 -ms-transform: scale(1.1);
-                  -o-transform: scale(1.1);
-                     transform: scale(1.1);  
-            }
-            .content-box {top: 130px; height: 1350px; width: 80vw;}
-            .content-box h3 {display: block; text-align: center; font-size: 20px; width: 100%; text-indent: -200px}
-            .tab {margin-left: 10px; }
-            .content-box ul.tab li {font-size: 16px}
-            .content-box .h_show ul li {width: 24%; padding:5px 3px;margin:5px 1px; border: none}
-            .content-box .h_show ul li:last-child{width: 30%;}
-            .content-box .hall_img {top: 250px;width: 100%; left: 0px;}
-            .content-box ul.text-b {bottom: 88vh;left: 4.5%; width: 90%;padding: 5px; height: 250px;overflow-y: scroll}
-            .content-box ul.text-b::-webkit-scrollbar{width: 15px; background-color: antiquewhite}
-            .content-box ul.text-b::-webkit-scrollbar-thumb{background-color: #84B1ED; background-clip: padding-box; border: 3px solid transparent }
-            .content-box ul.text-b::-webkit-scrollbar-track{background-color: #dceafc}
-            .content-box ul.text-b li {line-height: 2; font-size: 15px}
-            .content-box table.t_show {width: 90%;left: 5%;bottom: 10vh; font-size: 14px}
-            .content-box table.t_show tr th:nth-child(1){width:24%}
-            .content-box table.t_show tr th:nth-child(2){width: 76% !important}
-            .content-box table.t_show button {margin: 5px}
-            .content-box .rent_b{left: 27%;font-size: 16px;padding: 5px;}
-            #footer {top: 150px}
-        }
-    </style>
+    <script>
+        $(document).ready(function(){
+          $('.content-box > .tab li').click(function(){
+              var i = $(this).index();
+              
+              $('.tab > li ').removeClass();
+              $(this).addClass("on");
+              $('.hall > ul').removeClass("h_show");
+              $('.hall > ul').eq(i).addClass("h_show");
+              $('.hall > .h_show > li').removeClass();
+              $('.hall > .h_show > li').eq(0).addClass("tg");
+              $('.img-box > ul').removeClass("hall_img");
+              $('.img-box > ul').eq(i).addClass("hall_img");
+              $('.hall_img > li').removeClass();
+              $('.hall_img > li').eq(0).addClass("guide");              
+              $('.text_box > ul').removeClass();              
+              $('.text_box > ul').eq(i).addClass("text-b");
+              $('.table_list > table').removeClass();
+              $('.table_list > table').eq(i).addClass("t_show");
+          });
+            $('.h_show > li').click(function(){
+               var vi = $(this).index();
+               // $('.hall_img').hide();
+                $('.h_show > li').removeClass();
+                $('.h_show > li').eq(vi).addClass("tg");
+                $('.img-box > ul >li').removeClass();
+                $('.img-box > ul >li').eq(vi).addClass("guide");
+                
+            });
+            $('.hall > .ing > li').click(function(){
+               var vi = $(this).index();
+                
+                $('.hall > .ing > li').removeClass();
+                $('.hall > .ing > li').eq(vi).addClass("tg");
+                $('.img-box > .ping > li').removeClass();
+                $('.img-box > .ping > li').eq(vi).addClass("guide");
+               
+            });
+        });
+    </script>
 </head>
 <body>
     <div id="hd"></div>
@@ -409,9 +62,9 @@
         <h3>시설안내</h3>        
         <ul>
             <li><a href="sub_page3-1.html"><i class="fas fa-chevron-right"></i>시설개요</a></li>
-            <li class="on"><a href="sup-page2-1.html">전시장</a></li>
-            <li><a href="sup-page3-3.html">회의실</a></li>
-            <li><a href="sup-page3-4.html">편의시설</a></li>
+            <li class="on"><a href="sub-page2-1.html">전시장</a></li>
+            <li><a href="sub-page3-3.html">회의실</a></li>
+            <li><a href="sub-page3-4.html">편의시설</a></li>
         </ul>
     </div>
     <div class="content-box">
@@ -420,53 +73,46 @@
             <li class="on">1전시장</li>
             <li>2전시장</li>
         </ul>
-<!--    1전시장 탭-->
-        <div class="hall h_show">
-             <ul>
-                 <li class="tg"><a href="javascript:;;">전체개요</a></li>
-                 <li><a href="javascript:;;">전시 1홀</a></li>
-                 <li><a href="javascript:;;">전시 2홀</a></li>
-                 <li><a href="javascript:;;">전시 3홀</a></li>
-                 <li><a href="javascript:;;">전시 4홀</a></li>
-                 <li><a href="javascript:;;">전시 5홀</a></li>
-                 <li><a href="javascript:;;">옥외전시장</a></li>
-            </ul>           
+        <!--탭-->
+        <div class="hall">
+             <ul class="h_show">
+                 <li class="tg">전체개요</li>
+                 <li>전시 1홀</li>
+                 <li>전시 2홀</li>
+                 <li>전시 3홀</li>
+                 <li>전시 4홀</li>
+                 <li>전시 5홀</li>
+                 <li>옥외전시장</li>
+            </ul> 
+            <ul class="ing">
+                 <li>전체개요</li>
+                 <li>전시 6홀</li>
+                 <li>전시 7홀</li>
+                 <li>전시 8홀</li>
+                 <li>전시 9홀</li>
+                 <li>전시 10홀</li>                 
+            </ul>       
         </div>
+       <!--이미지박스-->
         <div class="img-box">
-           <ul>
-               <li><img class="hall_img" src="hall1.gif" alt=""></li>
+           <ul class="hall_img">
+               <li class="guide"><img src="sub-page/exhibit_flash_summary01.gif" alt="1층 전시장 전체도면"></li>
                <li><img src="sub-page/col1.png" alt=""></li>
                <li><img src="sub-page/col2.gif" alt=""></li>
                <li><img src="sub-page/col3.gif" alt=""></li>
                <li><img src="sub-page/col4.gif" alt=""></li>
                <li><img src="sub-page/col5.gif" alt=""></li>
                <li><img src="sub-page/col6.gif" alt=""></li>
-           </ul>            
-        </div>
-<!--        1전시장 홀 사진-->
-<!--       2전시장 탭-->
-        <div class="hall">
-            <ul>
-                 <li><a href="col2-1.html">전체개요</a></li>
-                 <li><a href="col2-2.html">전시 6홀</a></li>
-                 <li><a href="col2-3.html">전시 7홀</a></li>
-                 <li><a href="col2-4.html">전시 8홀</a></li>
-                 <li><a href="col2-5.html">전시 9홀</a></li>
-                 <li><a href="col2-6.html">전시 10홀</a></li>                 
-            </ul>   
-        </div>
-<!--        2전시장 탭 이미지-->
-        <div class="img-box2">
-            <ul>
+           </ul> 
+           <ul class="ping">
                 <li><img src="sub-page/col2-1.gif" alt=""></li>
                 <li><img src="sub-page/col2-2.gif" alt=""></li>
                 <li><img src="sub-page/col2-3.gif" alt=""></li>
                 <li><img src="sub-page/col2-4.gif" alt=""></li>
                 <li><img src="sub-page/col2-5.gif" alt=""></li>
                 <li><img src="sub-page/col2-6.gif" alt=""></li>
-            </ul>
+            </ul>           
         </div>
-<!--        텍스트 박스           -->
         <div class="text_box">
             <ul class="text-b">
                 <li><img src="sub-page/li1.png" alt="">
@@ -576,7 +222,6 @@
                         <li>전시부스 200부스 (3X3 부스 기준 , 통로포함)</li>
                         <li>A,B,C 각 2분할 가능, 전체 6분할 가능</li>
                         <li>6분할 - 강의식:400 극장식:800 연회식:450 리셉션 :1,000</li>
-                        <li>3분할 - 강의식:800 극장식:1,600 연회식:900 리셉션식:2,000</li>
                         <li>전체 - 강의식:2,400 극장식:5,400 연회식:2,700 리셉션식:6,000</li>
                     </ul>
                 </td>

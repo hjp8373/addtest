@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>회의실 안내</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">  
     <script src="js/jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />   
@@ -14,9 +14,85 @@
            $("#ft").load("footerbase.html");
         });
     </script>
-    <style>
-    
-    </style>
+    <script>
+        $(document).ready(function(){
+            $('.content > .c_area > .show > .tab-c > .show_i > img').hide();
+            $('.content > .c_area > .show > .tab-c > .show_i > img:first-child').show();
+            //$('.content > .c_area > .show > .tab-c > .show_i > img:first-child').addClass("image");
+           
+            
+            $('.content > .tab > li').click(function(){
+                
+               var i = $(this).index();
+                
+                $('.content > .tab > li').removeClass("tab_on");
+                $(this).addClass("tab_on");
+                /*subtab*/
+                $('.content > .tab > li >ul').removeClass("sub_view");
+                $('.content > .tab > li >ul').eq(i).addClass("sub_view");
+                /*li.tg*/
+                $('.content > .tab > .tab_on > .sub_view > li').removeClass("tg");
+                $('.content > .tab > .tab_on > .sub_view > li').eq(0).addClass("tg");
+                /*section*/
+                $('.content > .c_area > section').removeClass("show");
+                $('.content > .c_area > section').eq(i).addClass("show");
+                /*foucs*/
+                $('.content > .c_area > .show ').children('.tab-c').removeClass("c_on");
+                $('.content > .c_area > .show ').children('.tab-c').eq(0).addClass("c_on");
+            });
+            
+            //subview-content내용연결
+                $('.content > .tab > .tab_on > .sub_view > li ').click(function(){
+                   var ss = $(this).index();
+                    
+                    $('.content > .tab > .tab_on > .sub_view > li ').removeClass();
+                    $('.content > .tab > .tab_on > .sub_view > li ').eq(ss).addClass("tg");
+                    $('.content > .c_area > .show').children('.tab-c').removeClass("c_on");
+                    $('.content > .c_area > .show').children('.tab-c').eq(ss).addClass("c_on");
+                    
+                    console.log(ss)
+                    return false;
+                });
+            //subview-content내용연결
+            $('.list > li ').click(function(){
+                var st = $(this).index();
+                console.log(st);
+                
+                $('.list > li ').removeClass();
+                $('.list > li ').eq(st).addClass("tg");
+                $('.content > .c_area > .show').children('.tab-c').removeClass("c_on");
+                $('.content > .c_area > .show').children('.tab-c').eq(st).addClass("c_on");
+                
+                return false;
+            });
+            
+            //1전시장image 변경 
+            
+            var s_img = $('.content > .c_area > .show > .tab-c > .img_box > img');
+            
+            s_img.click(function(){
+               var on = $(this).index();
+                 console.log("img");
+                
+                $('.content > .c_area > .show > .c_on > .show_i > img').hide();
+                $('.content > .c_area > .show > .c_on > .show_i > img').eq(on).show();
+                s_img.removeClass();
+                $(this).addClass('image');
+                
+            
+                return false;
+            });
+            //2전시장 image 변경
+            $('.content > .c_area > .two > .ing > .img_box > img').click(function(){
+               var tt = $(this).index();
+                
+                $('.content > .c_area > .show > .c_on > .show_i > img').hide();
+                $('.content > .c_area > .show > .c_on > .show_i > img').eq(tt).show();
+                $('.content > .c_area > .two > .ing > .img_box > img').removeClass();
+                $(this).addClass('image');
+            });
+        });
+    </script>
 </head>
 <body>
     <div id="hd"></div>
@@ -25,16 +101,16 @@
         <h3>시설안내</h3>        
         <ul>
             <li><a href="sub_page3-1.html"><i class="fas fa-chevron-right"></i>시설개요</a></li>
-            <li><a href="sup-page2-1.html">전시장</a></li>
-            <li class="on"><a href="sup-page3-3.html">회의실</a></li>
-            <li><a href="sup-page3-4.html">편의시설</a></li>
+            <li><a href="sub-page2-1.html">전시장</a></li>
+            <li class="on"><a href="sub-page3-3.html">회의실</a></li>
+            <li><a href="sub-page3-4.html">편의시설</a></li>
         </ul>
     </div>
     <div class="content">
-        <h3>전시장</h3>
+        <h3>회의실</h3>
         <ul class="tab">
-            <li class="on">1전시장
-                <ul class="sub_view">
+            <li class="tab_on">1전시장
+                <ul class=" sub_view">
                     <li class="tg">전체개요</li>
                     <li>그랜드볼룸</li>
                     <li>이벤트홀</li>
@@ -44,8 +120,8 @@
                 </ul>
             </li>
             <li>2전시장
-                <ul>
-                    <li>전체개요</li>
+                <ul class="list">
+                    <li class="tg">전체개요</li>
                     <li>이벤트홀</li>
                     <li>대회의실</li>
                     <li>통합회의실</li>
@@ -55,10 +131,10 @@
         </ul>
         <div class="c_area">
         <!-- 1전시장-->
-            <section class="show ">
+            <section class="show">
               <!-- 개요  -->
-              <div class="focus ">
-                  <img src="sub3-3img/conventions_flash_summary01.gif" alt="">                  
+              <div class="tab-c c_on">
+                  <img class="center" src="sub3-3img/conventions_flash_summary01.gif" alt="">
               </div>
               <!-- 그랜드볼룸  -->
               <div class="tab-c ">
@@ -131,7 +207,7 @@
                 <img src="sub3-3img/conventions2-4.png" alt="">
                </div>                
                 <div class="img_box">
-                     <img src="sub3-3img/conventions_1.png" alt="">
+                     <img class="image" src="sub3-3img/conventions_1.png" alt="">
                      <img src="sub3-3img/conventions2-2.png" alt="">
                      <img src="sub3-3img/conventions2-3.png" alt="">
                      <img src="sub3-3img/conventions2-4.png" alt="">
@@ -174,7 +250,7 @@
             </table>
               </div> 
               <!-- 중회의실  --> 
-              <div class="tab-c c_on">
+              <div class="tab-c ">
                <div class="show_i">
                 <img src="sub3-3img/conventions3.png" alt="">
                 <img src="sub3-3img/conventions3-1.png" alt="">
@@ -224,7 +300,7 @@
             </table>
               </div>
               <!-- 통합회의실  -->
-              <div class="tab-c">
+              <div class="tab-c ">
                <div class="show_i">
                    <img src="sub3-3img/conventions4.png" alt="">
                 <img src="sub3-3img/conventions4-1.png" alt="">
@@ -274,7 +350,7 @@
             </table>  
               </div>
               <!-- VIP회의실  -->
-              <div class="tab-c">
+              <div class="tab-c ">
               <div class="show_i">
                 <img src="sub3-3img/conventions5.png" alt="">
                 <img src="sub3-3img/conventions5-1.png" alt="">
@@ -326,24 +402,22 @@
             </div>
             </section>
         <!-- 2전시장-->
-            <section>
+            <section class="two">
                <!-- 개요  -->
-                <div class="foucs">
-                    <img src="sub3-3img/conventions_flash_summary02.gif" alt=""> 
+                <div class="ing tab-c ">
+                    <img class="center" src="sub3-3img/conventions_flash_summary02.gif" alt=""> 
                 </div>
                 <!-- 이벤트홀  -->
-                <div class="tab-c">
+                <div class="ing tab-c ">
                 <div class="show_i">
                     <img src="sub3-3img/c1.png" alt="">
                     <img src="sub3-3img/c1-2.png" alt="">
                     <img src="sub3-3img/c1-3.png" alt="">
-                    <img src="sub3-3img/c1-4.png" alt="">
                 </div>                
                 <div class="img_box">
-                    <img src="sub3-3img/c1.png" alt="">
+                    <img class="image" src="sub3-3img/c1.png" alt="">
                     <img src="sub3-3img/c1-2.png" alt="">
                     <img src="sub3-3img/c1-3.png" alt="">
-                    <img src="sub3-3img/c1-4.png" alt="">
                 </div>
                 <table class="t_show">
                 <tr>
@@ -393,13 +467,12 @@
             </table>
                 </div>
                 <!-- 대회의실  -->
-                <div class="tab-c">
+                <div class="ing tab-c ">
                 <div class="show_i">
                     <img src="sub3-3img/c2.png" alt="">
                     <img src="sub3-3img/c2-1.png" alt="">
                     <img src="sub3-3img/c2-2.png" alt="">
-                </div>
-                
+                </div>                
                 <div class="img_box">
                     <img class="image" src="sub3-3img/c2.png" alt="">
                     <img src="sub3-3img/c2-1.png" alt="">
@@ -435,6 +508,7 @@
                    </td>                     
                 </tr> 
                 <tr>
+                    <td>부대시설</td>
                     <td>조정실, 동시통역실 4개소, 사무실(대기실) 2개소</td>
                 </tr>               
                 <tr>
@@ -445,7 +519,7 @@
             </table>  
                 </div>
                 <!-- 통합회의실 -->
-                <div class="tab-c">
+                <div class="ing tab-c ">
                 <div class="show_i">
                    <img src="sub3-3img/c3.png" alt="">
                     <img src="sub3-3img/c3-1.png" alt="">
@@ -453,7 +527,7 @@
                     <img src="sub3-3img/c3-3.png" alt="">                    
                 </div>                
                 <div class="img_box">
-                    <img src="sub3-3img/c3.png" alt="">
+                    <img class="image" src="sub3-3img/c3.png" alt="">
                     <img src="sub3-3img/c3-1.png" alt="">
                     <img src="sub3-3img/c3-2.png" alt="">
                     <img src="sub3-3img/c3-3.png" alt="">
@@ -487,6 +561,7 @@
                    </td>                     
                 </tr> 
                 <tr>
+                   <td>부대시설</td>
                     <td>조정실, 동시통역실 2개소, 사무실(대기실) 1개소</td>
                 </tr>               
                 <tr>
@@ -497,7 +572,7 @@
             </table>  
                 </div>
                 <!-- 중회의실 -->
-                <div class="tab-c">
+                <div class="ing tab-c ">
                 <div class="show_i">
                     <img src="sub3-3img/c4.png" alt="">
                     <img src="sub3-3img/c4-1.png" alt="">
@@ -539,6 +614,7 @@
                    </td>                     
                 </tr> 
                 <tr>
+                   <td>부대시설</td>
                     <td>조정실, 사무실(대기실)</td>
                 </tr>               
                 <tr>
