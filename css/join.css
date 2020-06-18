@@ -1,5 +1,7 @@
 
-input:focus{_outline: none}
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+body {font-family: 'NanumSquare';}
+html{ width: 99vw; overflow-x: hidden}
 h4{
     display: block;
     width: 100%;
@@ -10,17 +12,16 @@ h4{
     max-width: 1100px;
     margin: 0 auto;
 }
+h4 > img {
+    width: 180px;
+    margin-right: 10px;
+}
 hr {
     margin: 0 auto;
     width: 80%;
     max-width: 900px;
-    height: 2px;
-    background-blend-mode: #bbb;
-    background-image: -webkit-linear-gradient(left, #eee, #777, #eee);
-    background-image: -moz-linear-gradient(left, #eee, #777, #eee);
-    background-image: -ms-linear-gradient(left, #eee, #777, #eee);
-    background-image: -o-linear-gradient(left, #eee, #777, #eee);
-    
+    _height: 1px;
+    border-color: #a7c9ee;    
 }
 form {
     position: relative;
@@ -38,7 +39,7 @@ form:after{
     display: block;
     width: 98%;
     margin: 0 auto;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 2px solid #a7c9ee;
     margin-top: 120px
 }
 form .set {
@@ -116,7 +117,7 @@ form .agree a:after{
     width: 100%;
     border-bottom: 1px solid #ccc
 }
-form .agree div {
+form .agree .sc_box {
     display: none;
 }
 form .agree .on {

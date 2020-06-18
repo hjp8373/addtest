@@ -1,6 +1,6 @@
 @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
 body {font-family: 'NanumSquare';}
-html{_overflow-x: hidden}
+html{overflow-x: hidden}
 #bg {
 width:99vw;
 height: 340px;
@@ -305,19 +305,20 @@ div.ctg button:hover:before{
     .container {top: 130px;width: 90vw;}
     .container h3 {display: block; text-align: center; font-size: 22px; width: 100%; text-indent: -150px}
     .container div.show {display: none;}
-    .container .m_show {display: block; width: 100%; border: 1px solid;overflow: hidden;margin-top: 25px; }
+    .container .m_show {display: block; width: 100%; border-bottom: 1px solid #ccc;overflow: hidden;margin-top: 25px; }
     .container .m_show div.m_move {width: 500%; height: 300px;}
     .container .m_show div.m_move .m_list {width: 20%;float: left; padding: 15px;}
     .container .m_show div.m_move .m_list strong {font-size: 25px}
     .container .m_show div.m_move .m_list p {color: #3391da; font-size: 20px}
     .container .m_show div.m_move .m_list ul li {line-height: 2;padding-left:30px }
-    .container .m_show div.m_move .m_list ul li:first-child{margin-top: 20px; }
+    .container .m_show div.m_move .m_list ul li:first-child{margin-top: 10px; }
     .container .m_show div.m_move .m_list button {border: 1px solid #6098FF; background: rgba(0,0,0,0);color: #fff; padding: 5px 10px; background-color: #6098FF; cursor: pointer;margin-top: 20px}
     .container .m_show div.m_move .m_list button:nth-child(4){margin:0 20px 0 80px}
+    .container .swiper-pagination{font-size: 15px; display: block; width: 100%; top: 430px}
     .container .btn_box {display: block;position: relative; width: 100%; _top: 270px}
-    .container .btn_box i{position: absolute; top: -165px;font-size: 25px; cursor: pointer}
-    .container .btn_box i:last-child{right: 0;}
-    .container table {width: 100%;margin:50px 0;}
+    .container .btn_box p{position: absolute; top: -115px;cursor: pointer;height: 20px;}
+    .container .btn_box p:last-child{right: 0;}
+    .container table {width: 100%;margin:70px 0;}
     .container table tr {line-height: 3;}
 #footer {top: 150px;}
 }

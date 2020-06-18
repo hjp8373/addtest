@@ -5,8 +5,13 @@
     <title>Document</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">  
     <script src="js/jquery-3.4.1.min.js"></script>
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+-->
 <!--   <script src="js/jquery-3.5.0.min.js"></script>-->
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" /> 
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/sub4-2.css">
@@ -35,6 +40,12 @@
               $('.container > .box > .show > div').removeClass("ctg");
               $('.container > .box > .show > div').eq(0).addClass("ctg");
               
+              //모바일 
+              $('.container > div.m_box').removeClass("m_show");
+              $('.container > div.m_box').eq(i).addClass("m_show");
+              
+              
+              
               return false;
           });
             $('.container > .box > div > ul > li').click(function(){
@@ -48,6 +59,41 @@
                 console.log(ii);
                 return false;
             });
+            //모바일 회의실 슬라이드 
+//            var $move= $(".container").find(".m_show > .slider_move");
+//            var $moveWidth =$move.children().outerWidth();//이미지의 폭
+//            var $moveHeight = $move.children().outerHeight(), //높이
+//                $length= $move.children().length; //이미지의 길이
+//            var rollingId;
+//            
+//            rollingBanner();
+//            
+//            function rollingBanner(){
+//            
+//                $move.css("width",$moveWidth * $length + "px");
+//                $move.css("height",$moveHeight + "px");
+//                
+//                $(".swiper-button-prev").click(function(){
+//                    //배너의 좌측 위치를 옮겨 준다.
+//                   $move.stop().animate({left: -$moveWidth + "px"}, 1500, function(){
+//                       //첫 번째 이미지를 마지막 끝에 복사(이동이 아니라 복사) 해서 추가
+//                       $(this).append("<div>" + $(this).find("li:first").html()+"</div>");
+//                       //뒤로 복사된 첫번째 이미지는 필요 없으니 삭제한다.
+//                       $(this).find("div:first").remove();
+//                       //다음 움직음을 위해서 좌측의 위치값을 초기화
+//                       $(this).css("left",0);
+//                       console.log("1")
+//                   });
+//                });
+//                $(".swiper-button-next").click(function(){             
+//                       $move.prepend("<li>" + $move.find("div:last").html()+"</div>");
+//                    //뒤로 복사된 마지막 이미지는 필요 없으니 삭제
+//                       $move.find("div:last").remove();
+//                       $move.css("left", -$moveWidth);
+//                       $move.stop().animate({left:0}, 1500);
+//                   });
+//                }
+                
         });
     </script>
 </head>
@@ -202,15 +248,11 @@
       </div>
        
        
-       
-       
-       
-       
-       
         <!--모바일 탭-->
-        <div class="m_box m_show">
-         <div class="m_move">             
-             <div class="m_list">
+        <!--전시홀-->
+       <div class="m_box m_show swiper-container">
+         <div class="m_move swiper-wrapper">             
+          <div class="m_list swiper-slide">
               <strong>STEP 01</strong>
                 <P>임대신청</P>
                 <ul>
@@ -223,7 +265,7 @@
                 <button>전시홀 배정신청서</button>
                 <button>임대신청서류</button>
           </div>
-          <div class="m_list">
+          <div class="m_list swiper-slide">
                <strong>STEP 02</strong>
                 <P>계약체결</P>
                 <ul>
@@ -231,7 +273,7 @@
                     <li>임대 개시 3개월 전 계약서 작성 및 계약금(임대료의 20%)납부</li>
                 </ul> 
           </div>
-          <div class="m_list">
+          <div class="m_list swiper-slide">
               <strong>STEP 03</strong>
                 <P>임대 개시 14일전</P>
                 <ul>
@@ -240,7 +282,7 @@
                     <li>홀매니저와 사전업무협의 및 각종 관련서류 제출</li>
                 </ul>
           </div>
-          <div class="m_list">
+          <div class="m_list swiper-slide">
               <strong>STEP 04</strong>
                 <P>행사개최</P>
                 <ul>
@@ -248,7 +290,7 @@
                     <li>보도자료 및 디렉토리 제출</li>
                 </ul>
           </div>
-          <div class="m_list">
+          <div class="m_list swiper-slide">
               <strong>STEP 05</strong>
                 <P>행사종료</P>
                 <ul>
@@ -256,13 +298,13 @@
                     <li>관리비 정산</li>
                     <li>세금계산서 수령</li>
                 </ul>
-          </div>  
+          </div>             
          </div>
        </div>
        <!--회의실-->
-       <div class="m_box">
-         <div class="m_move">             
-             <div class="m_list">
+       <div class="m_box slider_view ">
+         <div class="m_move slider_move">             
+             <div class="m_list s_slide">
               <strong>STEP 01</strong>
                 <P>임대신청</P>
                 <ul>
@@ -273,7 +315,7 @@
                 </ul>
                 <button>임대신청서류</button>
           </div>
-          <div class="m_list">
+          <div class="m_list s_slide">
              <strong>STEP 02</strong>
                 <P>계약체결</P>
                 <ul>
@@ -282,7 +324,7 @@
                     <li>식/음료 서비스 문의 및 상담</li>
                 </ul> 
           </div>
-          <div class="m_list">
+          <div class="m_list s_slide">
              <strong>STEP 03</strong>
                 <P>임대 10일전</P>
                 <ul>
@@ -290,14 +332,14 @@
                     <li>홀매니저와 사전업무협의 및 각종 관련서류 제출</li>
                 </ul>
           </div>
-          <div class="m_list">
+          <div class="m_list s_slide">
               <strong>STEP 04</strong>
                 <P>행사개최</P>
                 <ul>
                     <li>행사개최</li>
                 </ul>
           </div>
-          <div class="m_list">
+          <div class="m_list s_slide">
               <strong>STEP 05</strong>
                 <P>행사종료</P>
                 <ul>
@@ -307,10 +349,11 @@
           </div>  
          </div>
        </div>
+       <div class="swiper-pagination"></div> 
        <!--m_btn-->
        <div class="btn_box">
-           <i class="fas fa-chevron-left"></i>
-           <i class="fas fa-chevron-right"></i>
+           <p class="swiper-button-prev ll"></p>
+           <p class="swiper-button-next"></p>
        </div>
        <!--테이블-->
        <table>
@@ -346,5 +389,20 @@
        </div>
     </div>
     <div id="ft"></div>
+    <script src="swiper-5.3.7/package/js/swiper.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            new Swiper('.swiper-container', {
+                pagination : { 
+                    el : '.swiper-pagination',
+                    type: 'fraction',
+                },
+                navigation : {
+                    nextEl : '.swiper-button-next', 
+                    prevEl : '.swiper-button-prev', 
+                },
+            });
+        });
+    </script>
 </body>
 </html>

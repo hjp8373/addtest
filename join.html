@@ -17,16 +17,26 @@
     </script>
     <script>         
         $(document).ready(function(){                
-            var box = $("fotm > .agree > div.sc_box")
-             $('form > .agree > a ').click(function(){
+            var box = $("form > .one > div");
+            var box2 = $("form > .two > div");
+            //첫 번째 약관
+             $('form > .one > a ').click(function(){
                  box.removeClass("on");
-                 $(this).find(">div").addClass("on")        
+                 box.addClass("on");
             });
-            //바탕을 클릭 시 어두운 배경, 큰 이미지 안 보임
-//            $('#glayLayer, #overLayer').click(function(){
-//                $('#glayLayer').hide();
-//                $('#overLayer').hide();
-//            })
+            //두 번째 약관
+             $('form > .two > a ').click(function(){
+                 box2.removeClass("on");
+                 box2.addClass("on");
+            });
+            //i을 클릭 시 어두운 배경, 큰 이미지 안 보임
+            $('form > .agree > .sc_box > .bg > i ').click(function(){
+                box.removeClass("on");
+                box2.removeClass("on");
+                
+                console.log("ii");
+                
+            })
         });
            function formCheck(){
                var name=document.forms[0].name.value;
@@ -34,6 +44,7 @@
             if(name == null || name == ""){
                 alert('아이디를입력하세요');
                 document.forms[0].name.focus();
+                
                 return false;
                 } 
            } 
@@ -42,7 +53,7 @@
 </head>
 <body>
    <div id="wrap"></div>
-   <h4>회원가입</h4>
+   <h4><img src="main-img/lg.png" alt="">회원가입</h4>
    <hr>
     <form id="join" action="#" method="post" onsubmit="return formCheck()">  
        <div class="set">
@@ -76,7 +87,7 @@
        </div>
        <div class="set pon">
            <label for="pone">휴대전화</label>
-           <input type="tel">
+           <input id="pone" type="text">
            <button>인증하기</button>
        </div>
        <div class="set sns">
@@ -93,7 +104,7 @@
                <option value="#">daum.net</option>
            </select>  
        </div>
-       <div class="agree">
+       <div class="agree one">
         <h2><input type="checkbox">서비스 이용약관</h2>
         <a href="#">[약관보기]</a>
         <div class="sc_box">
@@ -115,14 +126,14 @@
            </div>
         </div> 
        </div>        
-        <div class="agree">
+        <div class="agree two">
          <h2><input type="checkbox">개인정보 처리방침</h2>
          <a href="#">[약관보기]</a>
          
-        <div class="sc_box ">
-           <i class="fas fa-times"></i>
-           <div>
-            <h3>개인정보처리방침</h3>
+        <div class="sc_box">
+         <div class="bg"> 
+          <h3>개인정보처리방침</h3>
+           <i class="fas fa-times"></i>                      
             <p>
 킨텍스 개인정보 처리방침<br>
 <br>

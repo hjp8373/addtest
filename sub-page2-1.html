@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>행사안내</title>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"> 
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">    
     <script src="js/jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
     <script>
         $(document).ready(function(){
@@ -231,6 +232,7 @@
             .list_btn ul li:nth-child(1){left: 30px;}
             .list_btn ul li:nth-child(2){right: 30px;}    
             .indicator {position: absolute; bottom: 90px; border: 1px solid skyblue; display: block; width: 270px;height: 8px; border-radius: 100px;left:19vw;}
+            .swiper-pagination{background: #fff}
             .last-t {font-size: 14px; text-indent: 50px}
             #footer {top: 150px;}
         }
@@ -289,6 +291,7 @@
             .list_btn ul li:nth-child(1){left: 30px;}
             .list_btn ul li:nth-child(2){left: 67vw;}    
             .indicator {position: absolute; bottom: 90px; border: 1px solid skyblue; display: block; width: 270px;height: 8px; border-radius: 100px;left:19vw;}
+            .swiper-pagination{background: #fff}
             .last-t {font-size: 14px; text-indent: 50px}
             #footer {top: 150px;}
         }
@@ -346,6 +349,7 @@
             .list_btn ul li:nth-child(1){left: 30px;}
             .list_btn ul li:nth-child(2){left: 77vw;}    
             .indicator {position: absolute; bottom: 70px; border: 1px solid skyblue; display: block; width: 270px;height: 8px; border-radius: 100px;left:16vw;}
+            .swiper-pagination{background: #fff}
             .last-t {font-size: 14px; text-align: center; display: block; width: 350px; left: 9vw}
             #footer {top: 150px;}
         }
@@ -401,6 +405,7 @@
             .list_btn ul li:nth-child(1){left: 0px;}
             .list_btn ul li:nth-child(2){left: 77vw;}    
             .indicator {position: absolute; bottom: 120px; border: 1px solid lightskyblue; display: block; width: 270px;height: 8px; border-radius: 100px;left:6vw;}
+            .swiper-pagination{background: #fff}
             .last-t {font-size: 14px; text-align: center; display: block; width: 350px; left: -5vw}
             #footer {top: 150px;}
         }
@@ -428,7 +433,6 @@
                 $('.box > ul').removeClass("show");
                 $('.box > ul').eq(i).addClass("show");
                 num = i;
-                console.log(i)
             });
             //왼쪽으로[prev]
                 $('.prev').click(function(){
@@ -443,7 +447,6 @@
                     $('.box > ul').removeClass("show");
                     $('.box > ul').eq(num).addClass("show");
                     
-                    console.log("왼쪽")
                 });
             //오른쪽으로[next]
                 $('.next').click(function(){
@@ -457,9 +460,21 @@
                     $('.btn_num > li').eq(num).addClass("tg");
                     $('.box > ul').removeClass("show");
                     $('.box > ul').eq(num).addClass("show");
-                    
-                    console.log("오른쪽")
                 });
+            //m_content 슬라이드
+
+                 var swiper = new Swiper('.swiper-container', {
+                     
+                   pagination: {
+                     el: '.swiper-pagination',
+                     type: 'progressbar',
+                   },
+                   navigation: {
+                     nextEl: '.swiper-button-next',
+                     prevEl: '.swiper-button-prev',
+                   }
+   
+            });
         });
     </script>
 </head>
@@ -469,9 +484,9 @@
     <div class="side_nav">
         <h3>행사안내</h3>        
         <ul>
-            <li class="on"><a href="sub_page2-1.html"><i class="fas fa-chevron-right "></i>전체일정</a></li>
-            <li><a href="sup-page2-2.html">행사일정</a></li>
-            <li><a href="sup-page2-3.html">회의일정</a></li>
+            <li class="on"><a href="sub-page2-1.html"><i class="fas fa-chevron-right "></i>전체일정</a></li>
+            <li><a href="sub-page2-2.html">행사일정</a></li>
+            <li><a href="sub_page2-3.html">회의일정</a></li>
         </ul>
     </div>
     <div class="content-box">
@@ -551,7 +566,7 @@
                 </li>
              </ul>             
         </div>
-            <ul class="btn_box ">
+            <ul class="btn_box">
                 <li class="prev"><img src="main-img/left.png" alt=""></li> 
                 <div class="btn_num">
                     <li class="tg">1</li>
@@ -559,57 +574,57 @@
                 </div>
                 <li class="next"><img src="main-img/right.png" alt=""></li>
            </ul>
-           <div class="m_content">
-               <ul class="effect">
-                <li>                       
+           <div class="m_content swiper-container">
+               <ul class="effect swiper-wrapper">
+                <li class="swiper-slide">                       
                  <img src="sub-page/poster-1.png" alt=""> 
                  <p>[뉴경기미디어페스티벌]</p>
                  <p>2020-05-02~05-03</p>     
                  <span><a href="#">자세히보기</a></span>             
                 </li>
-                 <li>           
+                 <li class="swiper-slide">           
                  <img src="sub-page/poster-2.png" alt=""> 
                  <p>[대한민국기본소득박람회]</p>
                  <p>2020-05-07</p>    
                  <span><a href="#">자세히보기</a></span>              
                 </li>
-                <li>         
+                <li class="swiper-slide">         
                  <img src="sub-page/poster-3.png" alt=""> 
                  <p>[두드림타악페스티벌]</p>
                  <p>2020-05-08</p>   
                  <span><a href="#">자세히보기</a></span>               
                 </li>
-                <li>            
+                <li class="swiper-slide">            
                  <img src="sub-page/poster-4.png" alt=""> 
                  <p>[여성유망직종설명회]</p>
                  <p>2020-05-16</p>  
                  <span><a href="#">자세히보기</a></span>                
                 </li>
-                <li>            
+                <li class="swiper-slide">            
                  <img src="sub-page/poster-5.png" alt=""> 
                  <p>[2020핸드아티코리아]</p>
                  <p>2020-05-16~05-17</p>  
                  <span><a href="#">자세히보기</a></span>                
                 </li>
-                <li>            
+                <li class="swiper-slide">            
                  <img src="sub-page/poster-6.png" alt=""> 
                  <p>[제7회등공예강사자격시험]</p>
                  <p>2020-05-21</p>    
                  <span><a href="#">자세히보기</a></span>              
                 </li>
-                <li>             
+                <li class="swiper-slide">             
                  <img src="sub-page/poster-7.png" alt=""> 
                  <p>[프리미엄펫쇼in킨텍스]</p>
                  <p>2020-05-22~05-24</p>
                  <span><a href="#">자세히보기</a></span>                  
                 </li>
-                <li>            
+                <li class="swiper-slide">            
                  <img src="sub-page/poster-8.png" alt=""> 
                  <p>[PLAYX4:플레이엑스포]</p>
                  <p>2020-04-29~05-01</p>
                  <span><a href="#">자세히보기</a></span>                 
                 </li>
-                <li>             
+                <li class="swiper-slide">             
                  <img src="sub-page/poster-9.png" alt=""> 
                  <p>[2021년대학입시설명회]</p>
                  <p>2020-05-01</p>  
@@ -619,17 +634,32 @@
            </div>
            <div class="list_btn">
                <ul>
-                   <li class="l_b"><i class="fas fa-chevron-left fa-2x"></i></li>
-                   <li class="r_b"><i class="fas fa-chevron-right fa-2x"></i></li>
+                   <li class="l_b swiper-button-prev"></li>
+                   <li class="r_b swiper-button-next"></li>
                </ul>               
            </div>
-           <div class="indicator">
-               <span></span>
-           </div>
+           <div class="indicator swiper-pagination"></div>
          <div class="last-t">
              <p>※본 일정은 주최측의 사정에 따라 변경 될 수 있는 점 참고 부탁드립니다.</p>
          </div>
     </div>
     <div id="ft"></div>
+    <script src="swiper-5.3.7/package/js/swiper.min.js"></script>
+    <script>
+        $(document).ready(function(){
+           var swiper = new Swiper('.swiper-container', {
+                    
+                   pagination: {
+                     el: '.swiper-pagination',
+                     type: 'progressbar',
+                   },
+                   navigation: {
+                     nextEl: '.swiper-button-next',
+                     prevEl: '.swiper-button-prev',
+                   }
+   
+            }); 
+        });
+    </script>
 </body>
 </html>
