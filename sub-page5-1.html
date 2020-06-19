@@ -30,7 +30,6 @@
                 $('.container > table ').removeClass("show");
                 $('.container > table ').eq(i).addClass("show");
                 num = i;
-                console.log(i)
             });
             //왼쪽으로[prev]
                 $('.btnlb').click(function(){
@@ -45,7 +44,6 @@
                     $('.container > table ').removeClass("show");
                     $('.container > table ').eq(num).addClass("show");
                     
-                    console.log("왼쪽")
                 });
             //오른쪽으로[next]
                 $('.btnrb').click(function(){
@@ -59,7 +57,7 @@
                     $('.page_wrap > .btn > a').eq(num).addClass("active");
                     $('.container > table ').removeClass("show");
                     $('.container > table ').eq(num).addClass("show");
-                    console.log("오른쪽")
+                   
                 });
         });
     </script>

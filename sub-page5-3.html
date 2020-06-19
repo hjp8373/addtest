@@ -30,7 +30,6 @@
                 $('.container > div ').removeClass("t_show");
                 $('.container > div ').eq(i).addClass("t_show");
                 num = i;
-                console.log(i)
             });
             //왼쪽으로[prev]
                 $('.btnlb').click(function(){
@@ -45,7 +44,6 @@
                     $('.container > div ').removeClass("t_show");
                     $('.container > div ').eq(num).addClass("t_show");
                     
-                    console.log("왼쪽")
                 });
             //오른쪽으로[next]
                 $('.btnrb').click(function(){
@@ -59,8 +57,8 @@
                     $('.page_wrap > .btn > a').eq(num).addClass("active");
                     $('.container > div ').removeClass("t_show");
                     $('.container > div ').eq(num).addClass("t_show");
-                    console.log("오른쪽")
-                });javascript:;;
+                });
+            });
     </script> 
 </head>
 <body>
@@ -70,8 +68,8 @@
        <h3>고객만족센터</h3>
         <ul>
             <li><a href="sub-page5-1.html">고객의소리</a></li>
-            <li  class="on"><a href="sub-page5-2.html">공지사항<i class="fas fa-chevron-right"></i></a></li>            
-            <li><a href="sub-page5-3.html">입찰안내</a></li>            
+            <li ><a href="sub-page5-2.html">공지사항</a></li>            
+            <li class="on"><a href="sub-page5-3.html">입찰안내<i class="fas fa-chevron-right"></i></a></li>            
         </ul>
     </div>
     <div class="container">
@@ -160,12 +158,12 @@
        </div>
        <div class="pagination">
 		<div class="page_wrap">
-			<a href="#" class= "btnlb"><i class="fas fa-chevron-left"></i></a>
+			<a href="javascript:;;" class= "btnlb"><i class="fas fa-chevron-left"></i></a>
 			<span class="btn">
-				<a href="#" class="active">1</a>
-				<a href="#" class="">2</a>
+				<a href="javascript:;;" class="active">1</a>
+				<a href="javascript:;;" class="">2</a>
             </span>				
-			<a href="#" class= "btnrb" ><i class="fas fa-chevron-right"></i></a>
+			<a href="javascript:;;" class= "btnrb" ><i class="fas fa-chevron-right"></i></a>
 		</div>
 	    </div>
     </div>

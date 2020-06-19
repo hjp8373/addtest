@@ -9,8 +9,8 @@ html{ width: 99vw; overflow-x: hidden}
 #m_header{
     display: none;
 }
-.m_figcaption{
-    opacity: 0;
+#content2 .m_ver {
+    display: none;
 }
  h3{
         font-size: 40px;
@@ -23,7 +23,7 @@ h6{text-indent: -99999px}
 }
 #visual .bgimg{
     width: 100vw;
-    height: 90vh;
+    height: 87.9vh;
     position: absolute;    
     z-index: 100;
     animation: ani 15s infinite;
@@ -64,10 +64,10 @@ h6{text-indent: -99999px}
 /*visual 끝*/
 /*content1*/
 #content1 {
-    background: url(../main-img/bgg.jpg) no-repeat;
+    background: url(../main-img/bbb.png) no-repeat;
     background-size:cover;
     position: relative;
-    color: white
+    Ocolor: white
 }
 #content1 >.box1 {
 position: absolute;
@@ -84,6 +84,7 @@ position: absolute;
 #content1 >.box1 > ul.btn_list > li {
     float: left;
     cursor: pointer;
+    font-size: 40px
 }
 #content1 >.box1 > ul.btn_list > li:first-child {
     padding-right: 7%;
@@ -97,13 +98,12 @@ position: absolute;
     left: 30vw;
     overflow: hidden;
     height: 310px;
-    background: rgba(10,10,10,0.3)
+    background: rgba(255,255,255,0.7);
 }
 
 #content1 >.box2 > ul.poster_box{
     position: absolute;
     _right: -610px;
-    max-height: 350px;
 }
 #content1 >.box2 > ul.poster_box > li{
     float: left;
@@ -176,7 +176,8 @@ position: absolute;
   font-weight: 300;
   line-height: 1.2em;
   text-transform: uppercase;
-    font-size: 18px
+    font-size: 18px;
+     font-weight: bold;
 }
 .facility01 p {
   font-size: 0.9em;
@@ -185,7 +186,8 @@ position: absolute;
     position: absolute;
     right: 0;
     padding: 10px;
-    border: 1px solid
+    border: 1px solid;
+    bottom: 15px
 }
 .facility01 p a {
     display: block;
@@ -348,10 +350,11 @@ position: absolute;
         height: 22vw;
         _border: 1px solid;
         width: 68vw;
+        height: ;
     }    
     #content1 >.box2 > ul.poster_box{
         position: absolute;       
-        width: 1368px;
+        _width: 1368px;
     }
     #content1 >.box2 > ul.poster_box > li{
         float: left;
@@ -371,8 +374,8 @@ position: absolute;
     }
     
     .facility01 figcaption {
-      top: calc(75%);      
-      padding: 15px 25px 155px;
+      top: calc(85%);      
+      padding: 15px 25px 130px;
     }
     .facility01 figcaption:before {     
       height: 50px;
@@ -381,7 +384,9 @@ position: absolute;
         font-size: 17px
     }
     .facility01 p {
-        bottom: 70px;
+        bottom: 60px;
+        right: 10px;
+        padding: 5px 10px;
     }    
     .facility01:hover figcaption,
     .facility01.hover figcaption {
@@ -455,13 +460,18 @@ position: absolute;
         margin-left: 40%
     }
     #content1 >.box2 {
-        width: 75vw;
+        width: 75%;
         top: 50%;
         left: 15%;
         height: 27.5vw;
+        min-height:317px; 
+        min-width: 800px
+    }
+    #content1 >.box2 > ul.poster_box{
+        width: 144vw;
     }
     #content1 >.box2 > ul.poster_box > li{
-        width: 24vw;
+        width: 250px;
     }
     #content1 >.box2 > ul.poster_box > li img{
         width: 21vw
@@ -475,17 +485,14 @@ position: absolute;
       left: 7
     }
     .facility01 figcaption {
-      top: calc(85%);
+      top: calc(80%);
       padding: 15px 25px 90px;
     }
     .facility01 p {
-        _margin: 5px 0 5px;
         font-size: 14px;   
-        padding: 10px;
-        top: 70px;
-        padding: 0px;
-        width: 75px;
-        height: 35px;
+        padding: 0px 8px;
+        bottom: 30px;
+        right: 10px;
     }
     .facility01 h4 {
         font-size: 16px
@@ -495,8 +502,7 @@ position: absolute;
         line-height: 2.5;
     }
     
-    .facility01:hover figcaption,
-    .facility01.hover figcaption {
+    .facility01:hover figcaption {
       top: 120px;
     }
     #content2 > .icon_l {
@@ -541,6 +547,7 @@ position: absolute;
     h3{font-size: 30px;padding-bottom: 30px;}
     /*header -끝-*/
     /*visual*/    
+   
     @keyframes ani{
         0% {background: url(../main-img/pc-bg.png) no-repeat;
             background-size: cover;
@@ -595,7 +602,7 @@ position: absolute;
         height:300px
     }
     #content1 >.box2 > ul.poster_box{
-         width: 980px;
+         _width: 980px;
     }
     #content1 >.box2 > ul.poster_box > li{
         float: left;
@@ -623,7 +630,7 @@ position: absolute;
             
     }
     .facility01 figcaption {
-      top: calc(95%);
+      top: calc(80%);
       padding: 15px 25px 100px;
     }    
     .facility01 h4 {
@@ -632,10 +639,10 @@ position: absolute;
     .facility01 p {
        font-size: 0.9em;
         padding: 5px;
-        bottom: 40px;
+        bottom: 50px;
+        right: 10px;
     }
-    .facility01:hover figcaption,
-    .facility01.hover figcaption {
+    .facility01:hover figcaption {
       top: 160px;
     }    
     #content2 > .icon_l {
@@ -707,8 +714,10 @@ position: absolute;
 }
 @media all and (min-width:610px) and (max-width:779px){
      h3{font-size: 30px;padding-bottom: 30px;}
-
 /*    visual*/
+     #visual .bgimg{
+        height: 85.8vh;
+    }
     @keyframes ani{
         0% {background: url(../main-img/pc-bg.png) no-repeat;
             background-size: cover;
@@ -751,18 +760,18 @@ position: absolute;
     #content1 >.box1 > ul.btn_list > li:first-child {
         padding-right: 6%;
     }
-    #content1 >.box1 > ul.btn_list > li img {
-    width: 30px
+    #content1 >.box1 > ul.btn_list > li > i {
+        display: block;
     }
     #content1 >.box2 {
         width: 610px;
         top: 45%;
-        left: 10vw;
+        left: 8vw;
         overflow: hidden;
-        height: 270px
+        height: 270px;
     }
     #content1 >.box2 > ul.poster_box{
-         width: 1270px;
+         _width: 1270px;
     }
     #content1 >.box2 > ul.poster_box > li{
         float: left;
@@ -778,52 +787,53 @@ position: absolute;
     left: 10%;   
     }
     .facility01 {
-      margin: 5px;
-      width:400px;
-      font-size: 16px;
-      display: inline-block;
-      top: 15%;
-      left: 17%;
-      height: 200px;
+      display: none;      
     }
-    .facility01 img {
-      width: 100%;
-      position: absolute;
-      top:-90px;
+    #content2 .m_ver {
+        display:block;
+        width: 80%;
+        margin: 0 auto;
+        height: 675px;
+        margin-top: 130px;
+        font-weight: bold;        
     }
-    .facility01 figcaption {
-      display: none
+    .m_ver .col{
+        width: 500px;
+        height: 205px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        position: relative;
     }
-    .m_figcaption h4 {
-      font-weight: 300;
-      line-height: 9;
-        color: white;
-        text-align: center;
-    }
-    .m_figcaption p {
-        font-size: 0.9em;
-        opacity: 0.9;
-        border: 1px solid #fff;
-        display: inline-block;
-        border-radius: 3px;
-        right: 10px;
-        padding: 5px;
-        color: #000;
-        background: rgba(255,255,255,0.7)
-    }
-    .facility01:hover > .m_figcaption {
-        opacity: 0.9;
-        position: absolute;
-        background: rgba(0, 0, 0, 0.3);
+    .m_ver .col img {
         width: 100%;
-        height: 100%;
+        height: 205px;
     }
-    #content2 .facility01 p:hover {
-        background: rgb(255,255,255);
+    .m_ver .col > figcaption{
+        display: none;
     }
-    #content2 .facility01 p:hover a{
-        color: #000
+    .m_ver .col:hover figcaption{
+        display: block;
+        background: rgba(0,0,0,0.7);
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 205px;
+        color: #fff;
+        text-align: center;
+        line-height: 5;
     }
+    .m_ver .col figcaption h4{
+        font-size: 22px
+    }
+    .m_ver .col figcaption p a {
+        border: 1px solid;
+        padding: 7px 13px;
+    }
+    .m_ver .col figcaption p a:hover{
+        background: #fff;
+         color: #000
+    }
+    
     #content2 > .icon_l {
         bottom: 40px;
         left:50px
@@ -895,7 +905,7 @@ position: absolute;
 
 /*    visual*/
     #visual .bgimg{
-        height: 91vh;
+        height: 89vh;
     }
     #visual p {     
         font-size: 30px;
@@ -921,29 +931,30 @@ position: absolute;
         display: inline; 
     }  
     #content1 >.box1 > ul.btn_list > li {
-        margin-top: -20px
+        margin-top: -50px
     }
     #content1 >.box1 > ul.btn_list > li:first-child {
         padding-right: 6%;
     }
-     #content1 >.box1 > ul.btn_list > li img {
-    width: 30px
+    #content1 >.box1 > ul.btn_list > li img {
+        width: 30px
     }
     #content1 >.box2 {
-        width: 640px;
+        width: 430px;
         top: 45%;
-        left: 10vw;
-        height: 235px;    
+        left:5vw;
+        height: 300px;    
+        padding-top: 10px;
     }
     #content1 >.box2 > ul.poster_box{
-         width: 1140px;
+         width: 1200px;
     }
     #content1 >.box2 > ul.poster_box > li{
         float: left;
-        width: 190px;
+        width: 200px;
     }    
     #content1 >.box2 > ul.poster_box > li img{
-        width: 150px;
+        width: 180px;
     }
     /*content1 끝*/
     /*content2*/
@@ -952,52 +963,51 @@ position: absolute;
     left: 10%;   
     }
     .facility01 {
-      margin: 5px;
-      width:400px;
-      font-size: 16px;
-      display: inline-block;
-      top: 15%;
-      left: 10%;
-      height: 200px;
+      display: none;      
     }
-    .facility01 img {
-      width: 100%;
-      position: absolute;
-      top:-90px;
+    #content2 .m_ver {
+        display:block;
+        width: 80%;
+        margin: 0 auto;
+        height: 675px;
+        margin-top: 130px;
+        font-weight: bold;        
     }
-    .facility01 figcaption {
-      display: none
-    }    
-    .m_figcaption h4 {
-      font-weight: 300;
-      line-height: 9;
-        color: white;
-        text-align: center;
-    }
-    .m_figcaption p {
-        font-size: 0.9em;
-        opacity: 0.9;
-        border: 1px solid #fff;
-        display: inline-block;
-        border-radius: 3px;
-        right: 10px;
-        padding: 5px;
-        color: #000;
-        background: rgba(255,255,255,0.7)
-    }
-    .facility01:hover> .m_figcaption{
-        opacity: 0.9;
-        position: absolute;
-        background: rgba(0, 0, 0, 0.3);
+    .m_ver .col{
         width: 100%;
-        height: 100%;
-        
+        height: 205px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        position: relative;
     }
-    #content2 .facility01 p:hover {
-        background: rgb(255,255,255);
+    .m_ver .col img {
+        width: 100%;
+        height: 205px;
     }
-    #content2 .facility01 p:hover a{
-        color: #000
+    .m_ver .col > figcaption{
+        display: none;
+    }
+    .m_ver .col:hover figcaption{
+        display: block;
+        background: rgba(0,0,0,0.7);
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 205px;
+        color: #fff;
+        text-align: center;
+        line-height: 5;
+    }
+    .m_ver .col figcaption h4{
+        font-size: 22px
+    }
+    .m_ver .col figcaption p a {
+        border: 1px solid;
+        padding: 7px 13px;
+    }
+    .m_ver .col figcaption p a:hover{
+        background: #fff;
+         color: #000
     }
     #content2 > .icon_l {
         bottom: 40px;
@@ -1060,9 +1070,9 @@ position: absolute;
         width: 50%;
     }
     #content3 > .campaing > .btn_l {
-        top: 45%;
+        top: 37%;
     }
-    #content3 > .campaing > .btn_r{top: 45%;}
+    #content3 > .campaing > .btn_r{top: 37%;}
     /*content3끝*/
     /*footer*/
 }
@@ -1122,53 +1132,52 @@ position: absolute;
     left: 5%;   
     }
     .facility01 {
-      margin: 5px;
-      width:300px;
-      font-size: 16px;
-      display: inline-block;
-      top: 17%;
-      left: 8%;
-      height: 120px;
+      display: none;      
     }
-    .facility01 img {
-      width: 100%;
-      position: absolute;
-      top:-95px;
+    #content2 .m_ver {
+        display:block;
+        width: 80%;
+        margin: 0 auto;
+        height: 675px;
+        margin-top: 115px;
+        font-weight: bold;        
     }
-    .facility01 figcaption.lock {
-      display: none
-    }
-    .facility01:hover> .m_figcaption{
-        opacity: 0.9;
-        position: absolute;
-        background: rgba(0, 0, 0, 0.3);
+    .m_ver .col{
         width: 100%;
-        height: 100%;
+        height: 130px;
+        margin: 0 auto;
+        margin-bottom: 5px;
+        position: relative;
+    }
+    .m_ver .col img {
+        width: 100%;
+        height: 130px;
+    }
+    .m_ver .col > figcaption{
+        display: none;
+    }
+    .m_ver .col:hover figcaption{
         display: block;
-    }
-    .m_figcaption h4 {
-      font-weight: 300;
-      line-height: 2;
-        color: white;
+        background: rgba(0,0,0,0.7);
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 130px;
+        color: #fff;
         text-align: center;
+        line-height: 3;
     }
-    .m_figcaption p {
-        font-size: 13px;
-        opacity: 0.9;
-        border: 1px solid #fff;
-        display: inline-block;
-        border-radius: 3px;
-        right: 10px;
-        padding: 3px;
-        color: #000;
-        background: rgba(255,255,255,0.7);
-        bottom: 0
+    .m_ver .col figcaption h4{
+        font-size: 20px
     }
-    #content2 .facility01 p:hover {
-        background: rgb(255,255,255);
+    .m_ver .col figcaption p a {
+        border: 1px solid;
+        padding: 5px 10px;
+        font-size: 14px
     }
-    #content2 .facility01 p:hover a{
-        color: #000
+    .m_ver .col figcaption p a:hover{
+        background: #fff;
+         color: #000
     }
     #content2 > .icon_l {
         bottom: 30px;

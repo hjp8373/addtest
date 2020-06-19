@@ -399,7 +399,6 @@
                   $("#m_header > .m_btn > a > img").attr("src", "main-img/x.png");
                   $("#m_header > .m_nav").show(500); 
                   a = 1;
-                 console.log(a);
               }else{
                   $("#m_header > .m_btn > a > img").attr("src", "main-img/m_menu.png");
                   $("#m_header > .m_nav").hide(500);
@@ -417,8 +416,6 @@
                         cur = 10;
                     }
                     var i = $(this).index();
-                    
-                    console.log("cur:"+cur+"i:"+i+"isON:"+isOn);
                     
                     if(cur != i){
                         $(".m_sub").hide();
@@ -488,8 +485,8 @@
         </div>
     </div>
     <div id="m_header">
-        <div class="m_logo"><a href="#"><img src="main-img/lg.png" alt="킨텍스로고"></a></div>
-        <div class="m_btn"><a href="#"><img src="main-img/m_menu.png" alt="메뉴아이콘"></a></div>
+        <div class="m_logo"><a href="index.html"><img src="main-img/lg.png" alt="킨텍스로고"></a></div>
+        <div class="m_btn"><a href="javascript:;;"><img src="main-img/m_menu.png" alt="메뉴아이콘"></a></div>
         <div class="m_login"><a href="login.html"><img src="main-img/mobile-icon.png" alt="로그인"></a></div>
         <div class="m_nav">
             <ul>

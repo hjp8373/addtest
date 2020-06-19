@@ -49,7 +49,7 @@
             $('#content3 > .list_n > ul').eq(0).show();
              $('.box_c > .more > a').hide()
              $('.box_c > .more > a').eq(0).show()
-             console.log()
+            
              
              $('.box_c > span').click(function(){                 
                $('.box_c > span a').removeClass('on');
@@ -96,7 +96,6 @@
                    $(this).find("li:first").remove();
                    //다음 움직음을 위해서 좌측의 위치값을 초기화
                    $(this).css("left",0);
-                   console.log("1")
                });
             });
             $(".right_b").click(function(){             
@@ -119,7 +118,6 @@
                  $('.btn_l').click(function(){
                      current--;
                      if(current<0){current = containerLength-1};
-                     console.log("1")
                      showList(current);
                      
                  });
@@ -132,59 +130,11 @@
                      function showList(index){
                      var left = -(index*containerWidth); 
                 
-                    console.log("left:"+left+"index:" +index +"contaierWidth" + containerWidth);
                      $container2Ul.stop().animate({left:left}, 2000);
                  } 
         });
     </script>
-    <script>
-//       $(function(){
-//            var a = 0;
-//            $("#m_header > .m_nav").hide();
-//            
-//            $("#m_header > .m_btn").click(function(){
-//              if(a == 0){
-//                  $("#m_header > .m_btn > a > img").attr("src", "main-img/x.png");
-//                  $("#m_header > .m_nav").show(500); 
-//                  a = 1;
-//                 console.log(a);
-//              }else{
-//                  $("#m_header > .m_btn > a > img").attr("src", "main-img/m_menu.png");
-//                  $("#m_header > .m_nav").hide(500);
-//                  $(".m_sub").slideUp();
-//                  a = 0;
-//              } 
-//          });
-//            var cur = 10;
-//            var isOn = 2;
-//            $("#m_header > .m_nav> ul > li ").click(function(){
-//                var i = $(this).index();
-//             
-//                 //동일한 것을 두번 눌렀을 경우 cur 과 i 값이 동일 이므로 cur을 다른 값으로 setting
-//                    if(isOn == 1){
-//                        cur = 10;
-//                    }
-//                    var i = $(this).index();
-//                    
-//                    console.log("cur:"+cur+"i:"+i+"isON:"+isOn);
-//                    
-//                    if(cur != i){
-//                        $(".m_sub").hide();
-//                        $(this).find("img").attr("src","main-img/m_icon.png");
-//                        $(this).find(".m_sub").slideDown();
-//                        isOn = 2; //slide다운상태
-//                    }
-//                    else{
-//                        $("#m_header > .m_nav> ul > li>  a > img").attr("src", "main-img/plus.png");
-//                        $(this).find(".m_sub").slideUp();
-//                        isOn = 1; //slide업상태
-//                    }
-//                    cur = i;      
-//            });        
-//       });
-    </script>
-    <style>
-    </style>
+    
 </head>
 <body>    
     <section id="visual">
@@ -199,8 +149,8 @@
         <p>현재 킨텍스에서 진행중인 행사들을<br>확인해 보세요.</p>
         <p class="link_a"><a href="#">더보기 ＞</a></p>
         <ul class="btn_list">
-            <li><img class="left_b" src="main-img/left.png" alt="왼쪽으로"></li>
-            <li><img class="right_b" src="main-img/right.png" alt="오른쪽으로"></li>
+            <li><i class="far fa-caret-square-left left_b"></i></li>
+            <li><i class="far fa-caret-square-right right_b"></i></li>
         </ul>
        </div>
         <div class="box2">
@@ -242,7 +192,29 @@
                 <p><a href="sub-page3-4.html"> 알아보기</a></p>
             </figcaption>             
         </figure> 
-
+        <div class="m_ver">
+            <figure class="col">
+                <img src="main-img/facility1.png" alt="제 1전시장">
+            <figcaption class="lock">
+                <h4>제 1전시장</h4>
+                <p><a href="sub-page3-2.html"> 알아보기</a></p>
+            </figcaption>
+            </figure>
+            <figure class="col">
+                <img src="main-img/facility2.png" alt="제 2전시장">
+            <figcaption class="lock">
+                <h4>제 2전시장</h4>
+                <p><a href="sub-page3-2.html"> 알아보기</a></p>
+            </figcaption>
+            </figure>
+            <figure class="col">
+                <img src="main-img/facility3.png" alt="편의시설">
+            <figcaption class="lock">
+                <h4>편의시설</h4>
+                <p><a href="sub-page3-2.html"> 알아보기</a></p>
+            </figcaption>           
+            </figure>
+        </div>
         <div class="icon_l">
             <ul>
                 <li><a href="sub-page4-2.html"><i class="fas fa-landmark fa-2x"></i>전시홀 임대</a></li>

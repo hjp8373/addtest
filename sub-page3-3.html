@@ -50,14 +50,13 @@
                     $('.content > .c_area > .show').children('.tab-c').removeClass("c_on");
                     $('.content > .c_area > .show').children('.tab-c').eq(ss).addClass("c_on");
                     
-                    console.log(ss)
+                    
                     return false;
                 });
             //subview-content내용연결
             $('.list > li ').click(function(){
                 var st = $(this).index();
-                console.log(st);
-                
+                               
                 $('.list > li ').removeClass();
                 $('.list > li ').eq(st).addClass("tg");
                 $('.content > .c_area > .show').children('.tab-c').removeClass("c_on");
@@ -72,8 +71,7 @@
             
             s_img.click(function(){
                var on = $(this).index();
-                 console.log("img");
-                
+                                 
                 $('.content > .c_area > .show > .c_on > .show_i > img').hide();
                 $('.content > .c_area > .show > .c_on > .show_i > img').eq(on).show();
                 s_img.removeClass();
